@@ -1,0 +1,44 @@
+[
+  {
+    "name": "日本学術会議 一般公開イベント",
+    "url": "https://www.scj.go.jp/ja/event/",
+    "kind": "directory",
+    "priority": 1
+  },
+  {
+    "name": "東京大学法学部・法学政治学研究科",
+    "url": "https://www.j.u-tokyo.ac.jp/",
+    "kind": "university",
+    "priority": 1
+  },
+  {
+    "name": "慶應義塾大学法学部",
+    "url": "https://www.keio.ac.jp/ja/law/event/",
+    "kind": "university",
+    "priority": 1
+  },
+  {
+    "name": "日本私法学会",
+    "url": "https://japl.jp/",
+    "kind": "society",
+    "priority": 1
+  },
+  {
+    "name": "法と心理学会",
+    "url": "https://jslp.jp/",
+    "kind": "society",
+    "priority": 1
+  },
+  {
+    "name": "日本国際経済法学会",
+    "url": "https://www.jaiel.or.jp/",
+    "kind": "society",
+    "priority": 2
+  },
+  {
+    "name": "日本弁護士連合会",
+    "url": "https://www.nichibenren.or.jp/",
+    "kind": "professional",
+    "priority": 2
+  }
+]

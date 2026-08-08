@@ -1,0 +1,9 @@
+{
+  "name": "法学イベント",
+  "short_name": "法学イベント",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#17324d",
+  "lang": "ja"
+}
