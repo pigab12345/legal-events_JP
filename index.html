@@ -10,11 +10,11 @@ main{padding:12px}.notice{background:#fff8df;border:1px solid #ead58c;border-rad
 .card{background:white;border:1px solid #e1e5ea;border-radius:13px;padding:14px;margin:9px 0;position:relative}.date{font-size:13px;font-weight:700;color:#17324d}.title{font-size:17px;font-weight:750;margin:4px 0 8px}.meta{font-size:12px;line-height:1.8;color:#46505b}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.tag{font-size:10px;background:#edf3f7;border-radius:5px;padding:3px 6px}.source{display:inline-block;margin-top:9px;border:1px solid #dfe3e8;border-radius:8px;padding:6px 8px;text-decoration:none;color:#17324d;font-size:11px}
 .badges{position:absolute;top:12px;right:12px;display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;max-width:45%}
 .badge{font-size:10px;font-weight:700;border-radius:6px;padding:3px 7px;color:#fff}
-.badge.cancelled{background:#d64545}.badge.dateChanged{background:#e08a1e}.badge.applicationOpen{background:#1e8e4c}.badge.dist{background:#eef2f6;color:#334}
+.badge.cancelled{background:#d64545}.badge.dateChanged{background:#e08a1e}.badge.applicationOpen{background:#1e8e4c}.badge.dist{background:#eef2f6;color:#334}.badge.restricted{background:#6b7280}
 @media(max-width:650px){.controls{grid-template-columns:1fr 1fr 1fr}.controls input{grid-column:1/-1}}
 </style></head>
 <body><header><div class="wrap"><h1>⚖️ 法学イベント</h1><div class="sub">学会・公開講義・受験生ガイダンス・就活説明会／公式情報優先</div></div></header>
-<main class="wrap"><div class="notice">「公式確認済」は主催者公式ページで開催情報を確認したもの。「要確認」は参加費・非会員条件などが未確定の項目です。申込前に必ず公式ページを確認してください。距離は直線距離の目安であり、実際の所要時間ではありません。</div>
+<main class="wrap"><div class="notice">「公式確認済」は主催者公式ページで開催情報を確認したもの。「要確認」は参加費・非会員条件などが未確定の項目です。会員限定・学内限定・修習生限定などで一般の方が参加できないイベントも情報として掲載しています（「参加不可」バッジ表示）。申込前に必ず公式ページを確認してください。距離は直線距離の目安であり、実際の所要時間ではありません。</div>
 
 <div class="controls">
   <input id="q" placeholder="検索：民法、AI、大学名、登壇者など">
@@ -40,6 +40,8 @@ async function load(){try{data=await fetch("data/events.json?"+Date.now()).then(
 function badgesFor(e){
   let b=[];
   if(e.cancelled) b.push(`<span class="badge cancelled">中止・延期</span>`);
+  if(e.access==="不可") b.push(`<span class="badge restricted">参加不可（会員等限定）</span>`);
+  if(e.access==="要問合せ") b.push(`<span class="badge restricted">参加可否要問合せ</span>`);
   if(e.review_tags&&e.review_tags.includes("date_changed")) b.push(`<span class="badge dateChanged">日程変更</span>`);
   if(e.application_status==="受付中") b.push(`<span class="badge applicationOpen">申込受付中</span>`);
   let d=sortKey==="dist_yokohama"?e.dist_km_from_yokohama:e.dist_km_from_tokyo;
@@ -58,7 +60,7 @@ function render(){
   let q=document.querySelector("#q").value.toLowerCase(),m=document.querySelector("#month").value,a=document.querySelector("#area").value,c=document.querySelector("#category").value;
   sortKey=document.querySelector("#sort").value;
 
-  let x=data.filter(e=>(!q||JSON.stringify(e).toLowerCase().includes(q))&&(!m||e.date.startsWith(m))&&(!a||e.area.includes(a))&&(!c||e.category===c)&&(!filter||e.fields.includes(filter)||e.access.includes(filter)||e.fee.includes(filter)));
+  let x=data.filter(e=>(!q||JSON.stringify(e).toLowerCase().includes(q))&&(!m||e.date.startsWith(m))&&(!a||e.area.includes(a))&&(!c||e.category===c)&&(!filter||(filter==="一般参加"?e.access==="可":e.fields.includes(filter)||e.fee.includes(filter))));
 
   if(sortKey==="date"){
     x.sort((p,q2)=>(p.date||"9999").localeCompare(q2.date||"9999"));
