@@ -1,0 +1,17 @@
+[
+  {
+    "name": "日本私法学会 活動・大会",
+    "url": "https://japl.jp/activity/",
+    "note": "実在サイトの例。大会情報・非会員聴講条件が明記されている"
+  },
+  {
+    "name": "（例）〇〇大学法学部 講演会・シンポジウム一覧",
+    "url": "https://law.example-univ.ac.jp/news/events/",
+    "note": "実際の大学法学部・法科大学院のイベント一覧URLに差し替えてください"
+  },
+  {
+    "name": "（例）〇〇弁護士会 公開講座",
+    "url": "https://www.example-bengoshikai.or.jp/event/",
+    "note": "実際の弁護士会・司法書士会等のイベントページに差し替えてください"
+  }
+]
