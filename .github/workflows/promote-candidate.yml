@@ -1,19 +1,19 @@
-name: 候補をevents.jsonへ反映
+name: イベントを手動修正（誤登録の削除・確認区分の変更など）
 
 on:
   workflow_dispatch:
     inputs:
       candidate_id:
-        description: "候補ID（候補一覧はActionsのログ、またはcandidates.jsonで確認）"
+        description: "対象のイベントID（events.jsonまたはcandidates.jsonで確認）"
         required: true
       action:
-        description: "処理内容"
+        description: "処理内容（通常はremove。誤って自動登録されたイベントの削除用）"
         required: true
-        default: "promote"
+        default: "remove"
         type: choice
         options:
-          - promote
           - remove
+          - promote
       confidence:
         description: "確認区分（promote時のみ）"
         required: false
