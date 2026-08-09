@@ -47,6 +47,7 @@ jobs:
           add-paths: |
             data/candidates.json
             data/geocache.json
+            data/sources.json
 
       - name: Discord通知（任意・secrets.DISCORD_WEBHOOK_URL設定時のみ）
         if: steps.diff.outputs.changed == 'true' && env.DISCORD_WEBHOOK_URL != ''

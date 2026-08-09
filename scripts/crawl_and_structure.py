@@ -34,6 +34,7 @@ SOURCES_PATH = os.path.join(ROOT, "data", "sources.json")
 EVENTS_PATH = os.path.join(ROOT, "data", "events.json")
 CANDIDATES_PATH = os.path.join(ROOT, "data", "candidates.json")
 GEOCACHE_PATH = os.path.join(ROOT, "data", "geocache.json")
+REJECTED_PATH = os.path.join(ROOT, "data", "rejected_sources.json")
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 MODEL = "claude-sonnet-5"
@@ -74,6 +75,99 @@ EXTRACTION_PROMPT = """あなたは日本の法学系イベント情報を抽出
 {text}
 ---
 """
+
+DISCOVERY_PROMPT = """あなたは日本の法学系オンラインイベント情報サイトを探すリサーチャーです。
+ウェブ検索を使って、まだ把握していない「法学関連イベントの一覧ページ・お知らせページ」を新たに探してください。
+対象例:
+- 大学法学部・法科大学院のシンポジウム/講演会一覧ページ
+- 弁護士会・司法書士会・税理士会等の公開講座一覧ページ
+- 私法学会・公法学会など学会の大会案内ページ
+- 判例研究会・法学系研究会の告知ページ
+
+以下は既に把握済みのサイトです。これらと同一・実質的に重複するものは提案しないでください:
+{existing_urls}
+
+以下は過去に「対象外」と判断されたサイトです。これらも提案しないでください:
+{rejected_urls}
+
+見つかったら、次のJSON配列だけを出力してください（説明文・コードフェンス禁止。前置き・後書き禁止）。
+個別イベントページではなく「一覧・お知らせページ」を優先してください。最大5件まで。
+見つからなければ空配列 [] を返してください。
+
+[{{"name": "サイト名", "url": "https://...", "reason": "法学イベント一覧ページだと判断した根拠"}}]
+"""
+
+
+def normalize_url(u: str) -> str:
+    u = (u or "").strip().lower()
+    u = re.sub(r"^https?://", "", u)
+    u = re.sub(r"^www\.", "", u)
+    return u.rstrip("/")
+
+
+def call_claude_with_web_search(prompt: str) -> str:
+    if not ANTHROPIC_API_KEY:
+        raise RuntimeError("ANTHROPIC_API_KEY が設定されていません")
+    body = json.dumps({
+        "model": MODEL,
+        "max_tokens": 2000,
+        "messages": [{"role": "user", "content": prompt}],
+        "tools": [{"type": "web_search_20250305", "name": "web_search"}],
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        "https://api.anthropic.com/v1/messages",
+        data=body,
+        headers={
+            "content-type": "application/json",
+            "x-api-key": ANTHROPIC_API_KEY,
+            "anthropic-version": "2023-06-01",
+        },
+    )
+    with urllib.request.urlopen(req, timeout=90) as r:
+        data = json.loads(r.read().decode("utf-8"))
+    return "".join(
+        b.get("text", "") for b in data.get("content", []) if b.get("type") == "text"
+    ).strip()
+
+
+def discover_new_sources(existing_sources: list, rejected: list) -> list:
+    """既存sources.jsonと重複しない新規サイトをweb検索で発見する"""
+    existing_urls = "\n".join(f"- {s['url']}" for s in existing_sources) or "(なし)"
+    rejected_urls = "\n".join(f"- {u}" for u in rejected) or "(なし)"
+    prompt = DISCOVERY_PROMPT.format(existing_urls=existing_urls, rejected_urls=rejected_urls)
+
+    try:
+        raw = call_claude_with_web_search(prompt)
+    except Exception as e:
+        print(f"[WARN] サイト探索に失敗しました: {e}", file=sys.stderr)
+        return []
+
+    raw = re.sub(r"^```json|```$", "", raw, flags=re.MULTILINE).strip()
+    try:
+        found = json.loads(raw)
+        if not isinstance(found, list):
+            return []
+    except json.JSONDecodeError:
+        print(f"[WARN] サイト探索結果のJSON解析に失敗: {raw[:300]}", file=sys.stderr)
+        return []
+
+    known = {normalize_url(s["url"]) for s in existing_sources}
+    known |= {normalize_url(u) for u in rejected}
+
+    new_sources = []
+    for f in found:
+        url = f.get("url", "").strip()
+        if not url or normalize_url(url) in known:
+            continue
+        known.add(normalize_url(url))
+        new_sources.append({
+            "name": f.get("name", url),
+            "url": url,
+            "note": f.get("reason", "自動発見"),
+            "auto_discovered": True,
+            "discovered_at": datetime.now(timezone.utc).isoformat(),
+        })
+    return new_sources
 
 
 def fetch_text(url: str) -> str:
@@ -174,12 +268,28 @@ def main():
     events = load_json(EVENTS_PATH, [])
     candidates = load_json(CANDIDATES_PATH, [])
     geocache = load_json(GEOCACHE_PATH, {})
+    rejected = load_json(REJECTED_PATH, [])
 
     events_by_id = {make_id(e): e for e in events}
     candidates_by_id = {c["id"]: c for c in candidates}
 
     now = datetime.now(timezone.utc).isoformat()
-    report = {"new": [], "date_changed": [], "cancelled": [], "application_open": []}
+    report = {
+        "discovered": [], "new": [], "date_changed": [],
+        "cancelled": [], "application_open": [],
+    }
+
+    # --- 1. 新規サイトの自動発見 ---
+    print("[INFO] 新規サイトを探索中...")
+    discovered = discover_new_sources(sources, rejected)
+    if discovered:
+        sources.extend(discovered)
+        save_json(SOURCES_PATH, sources)
+        for d in discovered:
+            report["discovered"].append(f"{d['name']} ({d['url']})")
+        print(f"[INFO] {len(discovered)}件の新規サイトを発見・sources.jsonに追加しました")
+    else:
+        print("[INFO] 新規サイトは見つかりませんでした")
 
     for src in sources:
         url = src["url"]
@@ -239,8 +349,9 @@ def main():
 
     summary_lines = []
     for key, label in [
-        ("new", "🆕 新規候補"), ("date_changed", "📅 日程変更"),
-        ("cancelled", "🚫 中止"), ("application_open", "📝 申込開始"),
+        ("discovered", "🔎 新規発見サイト"), ("new", "🆕 新規候補"),
+        ("date_changed", "📅 日程変更"), ("cancelled", "🚫 中止"),
+        ("application_open", "📝 申込開始"),
     ]:
         if report[key]:
             summary_lines.append(f"### {label} ({len(report[key])}件)")
