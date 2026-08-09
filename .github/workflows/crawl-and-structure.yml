@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  issues: write
 
 jobs:
   crawl:
@@ -28,31 +27,10 @@ jobs:
         run: python scripts/crawl_and_structure.py
 
       - name: events.jsonをコミット・push
-        id: commit
         run: |
           git config user.name "legal-events-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/events.json data/candidates.json data/geocache.json data/sources.json
-          if git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git commit -m "🤖 イベント情報を自動更新"
-            git push
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: 更新内容をIssueで通知（記録用・レビュー不要）
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh issue create --title "🤖 イベント情報を自動更新しました" --body-file run_summary.md
-
-      - name: Discord通知（任意・secrets.DISCORD_WEBHOOK_URL設定時のみ）
-        if: steps.commit.outputs.changed == 'true' && env.DISCORD_WEBHOOK_URL != ''
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: |
-          SUMMARY=$(cat run_summary.md | head -c 1800)
-          curl -sf -H "Content-Type: application/json" \
-            -d "$(jq -n --arg content "法学イベント: 自動更新されました\n\n$SUMMARY" '{content:$content}')" \
-            "$DISCORD_WEBHOOK_URL"
+          git add data/events.json data/candidates.json data/geocache.json data/sources.json data/page_hashes.json
+          git diff --cached --quiet && echo "変更なし" && exit 0
+          git commit -m "🤖 イベント情報を自動更新"
+          git push
