@@ -22,6 +22,7 @@ import json
 import time
 import hashlib
 import urllib.request
+import urllib.error
 from datetime import datetime, timezone, timedelta
 
 import requests
@@ -202,8 +203,16 @@ def call_claude(prompt: str, tools=None, max_tokens=2000) -> str:
             "anthropic-version": "2023-06-01",
         },
     )
-    with urllib.request.urlopen(req, timeout=120) as r:
-        data = json.loads(r.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            data = json.loads(r.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        # エラー本文を読んで詳細な理由を例外メッセージに含める（例: 残高不足、不正なmodel名など）
+        try:
+            detail = e.read().decode("utf-8", errors="replace")
+        except Exception:
+            detail = "(本文取得不可)"
+        raise RuntimeError(f"HTTP {e.code}: {detail}") from None
     blocks = data.get("content", [])
     search_calls = sum(1 for b in blocks if b.get("type") == "server_tool_use")
     if tools:
