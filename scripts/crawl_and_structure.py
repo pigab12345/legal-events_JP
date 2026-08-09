@@ -36,6 +36,7 @@ EVENTS_PATH = os.path.join(ROOT, "data", "events.json")
 CANDIDATES_PATH = os.path.join(ROOT, "data", "candidates.json")
 GEOCACHE_PATH = os.path.join(ROOT, "data", "geocache.json")
 REJECTED_PATH = os.path.join(ROOT, "data", "rejected_sources.json")
+PAGE_HASHES_PATH = os.path.join(ROOT, "data", "page_hashes.json")
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 MODEL = "claude-sonnet-5"
@@ -393,7 +394,7 @@ EVENT_FIELDS = [
     "id", "title", "category", "date", "time", "org", "area", "place", "fee",
     "access", "speakers", "fields", "confidence", "source",
     "application_status", "cancelled", "lat", "lng",
-    "dist_km_from_tokyo", "dist_km_from_yokohama",
+    "dist_km_from_tokyo", "dist_km_from_yokohama", "added_at",
 ]
 
 
@@ -447,6 +448,7 @@ def main():
     events = load_json(EVENTS_PATH, [])
     geocache = load_json(GEOCACHE_PATH, {})
     rejected = load_json(REJECTED_PATH, [])
+    page_hashes = load_json(PAGE_HASHES_PATH, {})
 
     events_by_id = {make_id(e): e for e in events}
     candidates_log = []  # 監査ログ用（今回抽出した生データを記録するだけ。登録には使わない）
@@ -454,7 +456,7 @@ def main():
     now = datetime.now(timezone.utc).isoformat()
     report = {
         "discovered": [], "new": [], "date_changed": [],
-        "cancelled": [], "application_open": [], "skipped_past": 0,
+        "cancelled": [], "application_open": [], "skipped_past": 0, "skipped_unchanged": 0,
     }
 
     # --- 1. 新規サイトの自動発見 ---
@@ -478,11 +480,23 @@ def main():
             print(f"[WARN] 取得失敗 {url}: {e}", file=sys.stderr)
             continue
 
+        # --- 前回巡回時からページ内容が変わっていなければ、AI抽出そのものをスキップしてコストを節約 ---
+        # （ページが同一なら抽出結果も同一のはずなので、結果を変えずに呼び出し回数だけ減らせる）
+        text_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        if page_hashes.get(url) == text_hash:
+            print(f"[INFO] 前回から変更なしのためAI抽出をスキップ: {url}", file=sys.stderr)
+            report["skipped_unchanged"] += 1
+            continue
+
         try:
             extracted = extract_events_from_page(url, text)
         except Exception as e:
             print(f"[WARN] AI構造化失敗 {url}: {e}", file=sys.stderr)
             continue
+
+        # 抽出（成功・失敗問わず試行）が完了したら、このページのハッシュを更新
+        # ※AI呼び出し自体が例外で落ちた場合は上のcontinueで更新されず、次回また試行される
+        page_hashes[url] = text_hash
 
         for ev in extracted:
             # --- 開催日が既に過去のものはこの時点でリストアップしない ---
@@ -506,6 +520,9 @@ def main():
             candidates_log.append({"checked_at": now, **record})
 
             old_event = events_by_id.get(eid)
+
+            # --- 新着日時の記録: 既存イベントなら初回登録日を維持、新規なら今回の日時 ---
+            record["added_at"] = (old_event or {}).get("added_at") or now
 
             if not old_event:
                 report["new"].append(record["title"])
@@ -532,6 +549,7 @@ def main():
     save_json(EVENTS_PATH, list(events_by_id.values()))
     save_json(CANDIDATES_PATH, candidates_log)
     save_json(GEOCACHE_PATH, geocache)
+    save_json(PAGE_HASHES_PATH, page_hashes)
 
     summary_lines = []
     for key, label in [
@@ -544,6 +562,8 @@ def main():
             summary_lines.extend(f"- {t}" for t in report[key])
     if report["skipped_past"]:
         summary_lines.append(f"\n開催日が既に過ぎていたため {report['skipped_past']}件を除外しました。")
+    if report["skipped_unchanged"]:
+        summary_lines.append(f"前回から変更のなかったページ {report['skipped_unchanged']}件はAI処理をスキップしました（コスト節約）。")
     if pruned:
         summary_lines.append(f"開催日超過につき既存イベント {pruned}件を自動削除しました。")
     summary = "\n".join(summary_lines) if summary_lines else "変化はありませんでした。"

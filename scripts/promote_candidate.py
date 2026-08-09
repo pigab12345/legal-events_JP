@@ -21,7 +21,7 @@ FIELDS_FOR_EVENTS = [
     "id", "title", "category", "date", "time", "org", "area", "place", "fee",
     "access", "speakers", "fields", "confidence", "source",
     "application_status", "cancelled", "lat", "lng",
-    "dist_km_from_tokyo", "dist_km_from_yokohama",
+    "dist_km_from_tokyo", "dist_km_from_yokohama", "added_at",
 ]
 
 
