@@ -223,5 +223,180 @@
     "note": "法科大学院を含む各研究科の説明会・個別相談会予定一覧ページ",
     "auto_discovered": true,
     "discovered_at": "2026-08-09T07:47:38.890428+00:00"
+  },
+  {
+    "name": "第一東京弁護士会（一弁） - トップページ／ニュース",
+    "url": "https://www.ichiben.or.jp/",
+    "note": "[弁護士会] 第一東京弁護士会独自のイベント・ニュース告知ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026068+00:00"
+  },
+  {
+    "name": "第二東京弁護士会（二弁） - イベント一覧ページ",
+    "url": "https://niben.jp/news/event/",
+    "note": "[弁護士会] 複数のイベント告知が時系列で一覧化されているお知らせページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026089+00:00"
+  },
+  {
+    "name": "大阪弁護士会 - イベントページ",
+    "url": "https://www.osakaben.or.jp/event/",
+    "note": "[弁護士会] 日付付きの多数のイベント情報が一覧掲載されているページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026102+00:00"
+  },
+  {
+    "name": "愛知県弁護士会 - イベント情報ページ",
+    "url": "https://www.aiben.jp/event/",
+    "note": "[弁護士会] 愛知県弁護士会独自のイベント一覧",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026109+00:00"
+  },
+  {
+    "name": "福岡県弁護士会 - シンポジウム・講演会など お知らせ一覧",
+    "url": "https://www.fben.jp/whatsnew/cat3/",
+    "note": "[弁護士会] 福岡県弁護士会独自の講演会・シンポジウム一覧",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026116+00:00"
+  },
+  {
+    "name": "神奈川県弁護士会 - イベント情報一覧ページ",
+    "url": "https://www.kanaben.or.jp/news/event/index.html",
+    "note": "[弁護士会] イベント一覧に特化したページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026122+00:00"
+  },
+  {
+    "name": "Authense法律事務所（セミナー・イベント一覧）",
+    "url": "https://www.authense.jp/komon/seminar/",
+    "note": "[法律事務所] オンライン形式のセミナー・イベント情報を開催日時ごとに一覧表示",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026128+00:00"
+  },
+  {
+    "name": "長島・大野・常松法律事務所（講演/セミナー）",
+    "url": "https://www.nagashima.com/seminars/",
+    "note": "[法律事務所] 分野別セミナーを開催日時・講師・会場情報とともに一覧化",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026133+00:00"
+  },
+  {
+    "name": "大江橋法律事務所（セミナー情報一覧）",
+    "url": "https://www.ohebashi.com/jp/seminar.php",
+    "note": "[法律事務所] 多様な分野のセミナー情報を一覧形式で掲載",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026139+00:00"
+  },
+  {
+    "name": "北浜法律事務所（セミナー・講演一覧）",
+    "url": "https://www.kitahama.or.jp/seminars/",
+    "note": "[法律事務所] セミナー・講演一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026144+00:00"
+  },
+  {
+    "name": "国広総合法律事務所（開催予定の一覧）",
+    "url": "https://kunihiro-law.com/seminar/",
+    "note": "[法律事務所] 企業向け講演の告知を一覧化",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026150+00:00"
+  },
+  {
+    "name": "松田綜合法律事務所（セミナーカテゴリ一覧）",
+    "url": "https://jmatsuda-law.com/category/seminars/",
+    "note": "[法律事務所] WEBセミナー・シンポジウムを年代順にアーカイブ的に一覧掲載",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026155+00:00"
+  },
+  {
+    "name": "日本刑法学会（大会一覧ページ）",
+    "url": "https://clsj.jp/archives/category/taikai",
+    "note": "[学会・研究会] 刑法学会の大会案内が一覧化されている",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026161+00:00"
+  },
+  {
+    "name": "日本刑法学会 トップページ（新着告知）",
+    "url": "https://clsj.jp/",
+    "note": "[学会・研究会] 大会だけでなく部会の告知も掲載される新着一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026167+00:00"
+  },
+  {
+    "name": "日本知財学会 知財制度・判例分科会（判例研究会告知一覧）",
+    "url": "https://www.ipaj.org/bunkakai/chizaiseido_hanrei/index.html",
+    "note": "[学会・研究会] 判例研究会の開催告知が回次ごとに列挙される一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026173+00:00"
+  },
+  {
+    "name": "国際法学会 公開学術研究会情報（会員企画・招待制の研究会告知一覧）",
+    "url": "https://jsil.jp/archives/paslist",
+    "note": "[学会・研究会] 会員主導の研究会告知を集約する一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026178+00:00"
+  },
+  {
+    "name": "アジア国際法学会日本協会 研究大会・研究会・勉強会（告知一覧）",
+    "url": "https://asiansil-jp.org/meeting/",
+    "note": "[学会・研究会] 勉強会・研究会の告知が集約された一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026183+00:00"
+  },
+  {
+    "name": "国際私法学会（研究大会案内ページ）",
+    "url": "http://www.pilaj.jp/ind03_j.html",
+    "note": "[学会・研究会] 大会告知に特化した一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026189+00:00"
+  },
+  {
+    "name": "横浜市 市民法律講座のご案内",
+    "url": "https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/shiminsodan/sodanshitsu/kouza.html",
+    "note": "[公開講義・市民講座] 自治体主催の市民向け法律講座の一覧・案内ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026194+00:00"
+  },
+  {
+    "name": "千葉市 市民法律講座",
+    "url": "https://www.city.chiba.jp/sogoseisaku/shichokoshitsu/kohokocho/shiminhoritukoza.html",
+    "note": "[公開講義・市民講座] 自治体が主催する市民向け法律講座の告知ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026200+00:00"
+  },
+  {
+    "name": "北九州市立大学 公開講座",
+    "url": "https://www.kitakyu-u.ac.jp/contribution/open-lecture.html",
+    "note": "[公開講義・市民講座] 法律関連講座を含む全学的な公開講座一覧",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026206+00:00"
+  },
+  {
+    "name": "甲南大学 リカレント教育センター 公開講座（市民社会と法律）",
+    "url": "https://www.konan-u.ac.jp/education/recurrent/lecture/citizen-life.html",
+    "note": "[公開講義・市民講座] 大学主催の市民向け法律公開講座ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026211+00:00"
+  },
+  {
+    "name": "早稲田大学エクステンションセンター（公開講座）",
+    "url": "https://www.wuext.waseda.jp/",
+    "note": "[公開講義・市民講座] 法律の基礎力養成講座など弁護士による法律講座を含む一般向け公開講座一覧",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026216+00:00"
+  },
+  {
+    "name": "説明会・体験会の開催について（法務省・検事を志す皆さんへ）",
+    "url": "https://www.moj.go.jp/keiji1/keiji03_00056.html",
+    "note": "[受験生・修習生・就活] 検事の仕事に関する理解を深めるための説明会や体験会の一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026222+00:00"
+  },
+  {
+    "name": "法科大学院協会 イベントに関する記事一覧",
+    "url": "https://www.lskyokai.jp/category/event/",
+    "note": "[受験生・修習生・就活] 法科大学院協会が主催する学生・受験生向けイベント記事をまとめた一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T09:22:54.026229+00:00"
   }
 ]
