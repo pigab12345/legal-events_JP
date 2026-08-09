@@ -18,7 +18,7 @@ EVENTS_PATH = os.path.join(ROOT, "data", "events.json")
 CANDIDATES_PATH = os.path.join(ROOT, "data", "candidates.json")
 
 FIELDS_FOR_EVENTS = [
-    "id", "title", "date", "time", "org", "area", "place", "fee",
+    "id", "title", "category", "date", "time", "org", "area", "place", "fee",
     "access", "speakers", "fields", "confidence", "source",
     "application_status", "cancelled", "lat", "lng",
     "dist_km_from_tokyo", "dist_km_from_yokohama",
