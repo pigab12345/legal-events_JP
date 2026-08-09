@@ -76,25 +76,39 @@ EXTRACTION_PROMPT = """あなたは日本の法学系イベント情報を抽出
 ---
 """
 
-DISCOVERY_PROMPT = """あなたは日本の法学系オンラインイベント情報サイトを探すリサーチャーです。
-ウェブ検索を使って、まだ把握していない「法学関連イベントの一覧ページ・お知らせページ」を新たに探してください。
-対象例:
+DISCOVERY_SEARCH_PROMPT = """あなたは日本の法学系オンラインイベント情報サイトを探すリサーチャーです。
+ウェブ検索ツールを積極的に使い、最低3回は異なるキーワードで検索してください。
+（例: "大学 法学部 シンポジウム 一覧", "弁護士会 公開講座", "学会 大会案内 法学", "判例研究会 告知" など）
+
+探す対象:
 - 大学法学部・法科大学院のシンポジウム/講演会一覧ページ
 - 弁護士会・司法書士会・税理士会等の公開講座一覧ページ
 - 私法学会・公法学会など学会の大会案内ページ
 - 判例研究会・法学系研究会の告知ページ
 
-以下は既に把握済みのサイトです。これらと同一・実質的に重複するものは提案しないでください:
+以下は既に把握済みのサイトです。これらと同一・実質的に重複するものは除外してください:
 {existing_urls}
 
-以下は過去に「対象外」と判断されたサイトです。これらも提案しないでください:
+以下は過去に「対象外」と判断されたサイトです。これらも除外してください:
 {rejected_urls}
 
-見つかったら、次のJSON配列だけを出力してください（説明文・コードフェンス禁止。前置き・後書き禁止）。
-個別イベントページではなく「一覧・お知らせページ」を優先してください。最大5件まで。
-見つからなければ空配列 [] を返してください。
+検索結果から、個別イベントページではなく「一覧・お知らせページ」を優先して、
+見つかったサイトを最大8件、サイト名・URL・法学イベント一覧ページだと判断した根拠とともに
+箇条書きでリストアップしてください（説明や検索過程の記述があっても構いません）。
+"""
 
-[{{"name": "サイト名", "url": "https://...", "reason": "法学イベント一覧ページだと判断した根拠"}}]
+DISCOVERY_FORMAT_PROMPT = """以下はリサーチャーが調査した「法学系イベント一覧ページ」の候補メモです。
+このメモに実際に登場するURLだけを使って、次のJSON配列だけを出力してください
+（説明文・コードフェンス・前置き・後書き一切禁止。出力の最初の文字は [ 、最後の文字は ] にしてください）。
+
+メモに具体的なURLが1件も含まれていない場合は、空配列 [] だけを出力してください。
+URLを推測や創作で補ってはいけません。
+
+[{{"name": "サイト名", "url": "https://...", "reason": "根拠"}}]
+
+--- メモ ---
+{notes}
+--- ここまで ---
 """
 
 
@@ -105,15 +119,30 @@ def normalize_url(u: str) -> str:
     return u.rstrip("/")
 
 
-def call_claude_with_web_search(prompt: str) -> str:
+def extract_json_array(raw: str):
+    """前置き・後書きが混ざっていても最初の[〜最後の]を取り出してJSON化する"""
+    raw = raw.strip()
+    raw = re.sub(r"^```json|```$", "", raw, flags=re.MULTILINE).strip()
+    start, end = raw.find("["), raw.rfind("]")
+    if start == -1 or end == -1 or end < start:
+        return None
+    try:
+        return json.loads(raw[start:end + 1])
+    except json.JSONDecodeError:
+        return None
+
+
+def call_claude(prompt: str, tools=None, max_tokens=2000) -> str:
     if not ANTHROPIC_API_KEY:
         raise RuntimeError("ANTHROPIC_API_KEY が設定されていません")
-    body = json.dumps({
+    payload = {
         "model": MODEL,
-        "max_tokens": 2000,
+        "max_tokens": max_tokens,
         "messages": [{"role": "user", "content": prompt}],
-        "tools": [{"type": "web_search_20250305", "name": "web_search"}],
-    }).encode("utf-8")
+    }
+    if tools:
+        payload["tools"] = tools
+    body = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
         "https://api.anthropic.com/v1/messages",
         data=body,
@@ -123,32 +152,49 @@ def call_claude_with_web_search(prompt: str) -> str:
             "anthropic-version": "2023-06-01",
         },
     )
-    with urllib.request.urlopen(req, timeout=90) as r:
+    with urllib.request.urlopen(req, timeout=120) as r:
         data = json.loads(r.read().decode("utf-8"))
-    return "".join(
-        b.get("text", "") for b in data.get("content", []) if b.get("type") == "text"
-    ).strip()
+    blocks = data.get("content", [])
+    search_calls = sum(1 for b in blocks if b.get("type") == "server_tool_use")
+    if tools:
+        print(f"[INFO] web_search呼び出し回数: {search_calls}", file=sys.stderr)
+    return "".join(b.get("text", "") for b in blocks if b.get("type") == "text").strip()
 
 
 def discover_new_sources(existing_sources: list, rejected: list) -> list:
-    """既存sources.jsonと重複しない新規サイトをweb検索で発見する"""
+    """既存sources.jsonと重複しない新規サイトをweb検索で発見する（検索→整形の2段階）"""
     existing_urls = "\n".join(f"- {s['url']}" for s in existing_sources) or "(なし)"
     rejected_urls = "\n".join(f"- {u}" for u in rejected) or "(なし)"
-    prompt = DISCOVERY_PROMPT.format(existing_urls=existing_urls, rejected_urls=rejected_urls)
 
+    # --- 1段階目: 検索そのものはツールに自由にやらせる（JSON強制はしない） ---
+    search_prompt = DISCOVERY_SEARCH_PROMPT.format(existing_urls=existing_urls, rejected_urls=rejected_urls)
     try:
-        raw = call_claude_with_web_search(prompt)
+        notes = call_claude(
+            search_prompt,
+            tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 8}],
+            max_tokens=4000,
+        )
     except Exception as e:
-        print(f"[WARN] サイト探索に失敗しました: {e}", file=sys.stderr)
+        print(f"[WARN] サイト探索(検索フェーズ)に失敗しました: {e}", file=sys.stderr)
         return []
 
-    raw = re.sub(r"^```json|```$", "", raw, flags=re.MULTILINE).strip()
+    if not notes:
+        print("[WARN] 検索フェーズの出力が空でした（web検索が組織で無効化されている可能性があります）", file=sys.stderr)
+        return []
+    print(f"[DEBUG] 検索フェーズの出力(先頭400字): {notes[:400]}", file=sys.stderr)
+
+    # --- 2段階目: 得られたメモを厳密なJSONへ整形（検索ツールは使わせない） ---
     try:
-        found = json.loads(raw)
-        if not isinstance(found, list):
-            return []
-    except json.JSONDecodeError:
+        raw = call_claude(DISCOVERY_FORMAT_PROMPT.format(notes=notes), max_tokens=2000)
+    except Exception as e:
+        print(f"[WARN] サイト探索(整形フェーズ)に失敗しました: {e}", file=sys.stderr)
+        return []
+
+    found = extract_json_array(raw)
+    if found is None:
         print(f"[WARN] サイト探索結果のJSON解析に失敗: {raw[:300]}", file=sys.stderr)
+        return []
+    if not isinstance(found, list):
         return []
 
     known = {normalize_url(s["url"]) for s in existing_sources}
@@ -182,35 +228,18 @@ def fetch_text(url: str) -> str:
     return text[:8000]
 
 
-def call_claude(url: str, text: str) -> list:
-    if not ANTHROPIC_API_KEY:
-        raise RuntimeError("ANTHROPIC_API_KEY が設定されていません")
+def extract_events_from_page(url: str, text: str) -> list:
     prompt = EXTRACTION_PROMPT.format(url=url, text=text)
-    body = json.dumps({
-        "model": MODEL,
-        "max_tokens": 4000,
-        "messages": [{"role": "user", "content": prompt}],
-    }).encode("utf-8")
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=body,
-        headers={
-            "content-type": "application/json",
-            "x-api-key": ANTHROPIC_API_KEY,
-            "anthropic-version": "2023-06-01",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=60) as r:
-        data = json.loads(r.read().decode("utf-8"))
-    raw = "".join(b.get("text", "") for b in data.get("content", []))
-    raw = raw.strip()
-    raw = re.sub(r"^```json|```$", "", raw, flags=re.MULTILINE).strip()
     try:
-        parsed = json.loads(raw)
-        return parsed if isinstance(parsed, list) else []
-    except json.JSONDecodeError:
+        raw = call_claude(prompt, max_tokens=4000)
+    except Exception as e:
+        print(f"[WARN] AI構造化に失敗しました {url}: {e}", file=sys.stderr)
+        return []
+    found = extract_json_array(raw)
+    if found is None:
         print(f"[WARN] JSON解析失敗: {url}\n{raw[:500]}", file=sys.stderr)
         return []
+    return found if isinstance(found, list) else []
 
 
 def make_id(ev: dict) -> str:
@@ -301,7 +330,7 @@ def main():
             continue
 
         try:
-            extracted = call_claude(url, text)
+            extracted = extract_events_from_page(url, text)
         except Exception as e:
             print(f"[WARN] AI構造化失敗 {url}: {e}", file=sys.stderr)
             continue

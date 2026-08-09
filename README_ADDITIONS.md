@@ -15,10 +15,19 @@ Settings → Secrets and variables → Actions で以下を追加:
 
 ## 3. 動作の流れ
 1. 毎日 JST 6:00 にワークフローが起動（`workflow_dispatch` で手動実行も可）
-2. 各サイトを巡回 → Claude APIでイベント候補をJSON化
-3. 既存 `events.json` と突合し、新規／日程変更／中止／申込開始を検出
-4. `data/candidates.json` を更新し、変化があれば自動でPRを作成（**events.jsonは自動更新されません**＝誤情報防止のため必ず人間確認を挟む設計を維持）
-5. PRがGitHub通知として届く（＋Discord Webhook設定時はそちらにも通知）
+2. **新規サイトを自動発見**: Claude APIのWeb検索機能で、`sources.json`にまだ無い法学系イベント一覧ページを探索し、見つかれば`sources.json`に自動追加（同じ実行内でそのまま巡回対象になる）
+3. 各サイト（既存＋新規発見分）を巡回 → Claude APIでイベント候補をJSON化
+4. 既存 `events.json` と突合し、新規／日程変更／中止／申込開始を検出
+5. `data/candidates.json` と `data/sources.json` を更新し、変化があれば自動でPRを作成（**events.jsonは自動更新されません**＝誤情報防止のため必ず人間確認を挟む設計を維持）
+6. PRがGitHub通知として届く（＋Discord Webhook設定時はそちらにも通知）
+
+### 見つけてほしくないサイトを除外する
+自動発見が明後日の方向のサイトを拾ってきた場合、`data/rejected_sources.json` にURLを追加してください。
+次回以降の探索でそのサイト（と類似候補）を提案しなくなります。
+
+```json
+["https://example.com/irrelevant-page"]
+```
 
 ## 4. 候補を本番反映する（スマホだけでOK・Python不要）
 
