@@ -13,5 +13,75 @@
     "name": "（例）〇〇弁護士会 公開講座",
     "url": "https://www.example-bengoshikai.or.jp/event/",
     "note": "実際の弁護士会・司法書士会等のイベントページに差し替えてください"
+  },
+  {
+    "name": "東京大学大学院法学政治学研究科・法学部（イベント情報）",
+    "url": "https://www.j.u-tokyo.ac.jp/",
+    "note": "「イベント 第307回比較法政セミナー」「イベント シンポジウム『憲法改正の比較憲法学』開催のご案内」など複数の講演会・シンポジウム告知が一覧掲載されている。個別イベントページではなく、トップページに更新順で一覧表示される形式。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757228+00:00"
+  },
+  {
+    "name": "東京弁護士会 イベント情報等",
+    "url": "https://www.toben.or.jp/news/event/",
+    "note": "公開講座「泐佐野市ふるさと納税訴訟」の案内や日弁連主催の講演会案内など、複数の法学系イベント告知がまとめて掲載されている一覧ページ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757248+00:00"
+  },
+  {
+    "name": "日本弁護士連合会（日弁連）イベント一覧",
+    "url": "https://www.nichibenren.or.jp/event.html",
+    "note": "公開学習会や模擬裁判選手権、消費者セミナーなど日付順に多数のイベント告知が並ぶ公式一覧ページ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757257+00:00"
+  },
+  {
+    "name": "関西大学法学研究所",
+    "url": "https://www.kansai-u.ac.jp/ILS/",
+    "note": "特別研究会の開催案内があり、「シンポジウム」「公開講座」「現代法セミナー」「特別研究会」といったメニューで一覧化されている研究所公式サイト。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757263+00:00"
+  },
+  {
+    "name": "中央大学法学会",
+    "url": "https://www.chuo-u.ac.jp/activities/culture/culture_circle/culture10/",
+    "note": "「中央大学学術シンポジウム一覧」というページが用意されており、法学関連の学術シンポジウムがまとめられている。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757269+00:00"
+  },
+  {
+    "name": "国際私法学会",
+    "url": "http://www.pilaj.jp/",
+    "note": "「第139回(2026年度)国際私法学会研究大会」の開催告知が掲載されており、学会公式サイトとして大会案内ページを持つ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757275+00:00"
+  },
+  {
+    "name": "情報ネットワーク法学会",
+    "url": "https://inlaw.jp/",
+    "note": "オンライン研究会の開催告知や研究大会の日程・会場案内が複数掲載されている学会公式サイト。判例研究会・研究大会の告知ページとして機能。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757280+00:00"
+  },
+  {
+    "name": "九州公法判例研究会",
+    "url": "http://pacoq.net/qkohanken/",
+    "note": "「九州公法判例研究会のご案内」「九州行政判例研究会のご案内」として、開催回・テーマ・判例番号を明記した告知が継続的に掲載されている判例研究会専門の告知サイト。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757289+00:00"
+  },
+  {
+    "name": "東北大学法学部の研究会一覧",
+    "url": "https://www.law.tohoku.ac.jp/research/businesslaw/all/",
+    "note": "判例研究会告知として有力とされたが、優先度の高い8件からは除外された参考サイト。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757295+00:00"
+  },
+  {
+    "name": "東京大学民事法判例研究会・民法懇話会",
+    "url": "https://www.hanmin.j.u-tokyo.ac.jp/",
+    "note": "判例研究会告知として有力とされたが、優先度の高い8件からは除外された参考サイト。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:32:43.757301+00:00"
   }
 ]

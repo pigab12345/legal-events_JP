@@ -1,11 +1,6 @@
 [
   {
-    "checked_at": "2026-08-09T05:31:58.276999+00:00",
     "id": "24c26335f701",
-    "lat": null,
-    "lng": null,
-    "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null,
     "title": "法学研究所 第177回特別研究会",
     "date": "2026-08-27",
     "time": "",
@@ -18,9 +13,13 @@
     "fields": [
       "法学"
     ],
+    "confidence": "公式確認済",
+    "source": "https://www.kansai-u.ac.jp/ILS/",
     "application_status": "受付中",
     "cancelled": false,
-    "source": "https://www.kansai-u.ac.jp/ILS/",
-    "confidence": "公式確認済"
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null
   }
 ]
