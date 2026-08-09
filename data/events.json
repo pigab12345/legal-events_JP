@@ -19,7 +19,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "af498ff5e5fe",
@@ -99,7 +100,7 @@
     "id": "7822263e86b5",
     "title": "市民法律講座（川崎）",
     "category": "公開講義・市民講座",
-    "date": "",
+    "date": "2026-09-03",
     "time": "14:00〜16:00",
     "org": "神奈川県弁護士会",
     "area": "神奈川",
@@ -117,13 +118,14 @@
     "lat": 35.531404,
     "lng": 139.696893,
     "dist_km_from_tokyo": 17.8,
-    "dist_km_from_yokohama": 9.9
+    "dist_km_from_yokohama": 9.9,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "5825eb153a5c",
     "title": "市民法律講座（横浜）",
     "category": "公開講義・市民講座",
-    "date": "",
+    "date": "2026-10-01",
     "time": "18:15〜20:15",
     "org": "神奈川県弁護士会",
     "area": "神奈川",
@@ -141,13 +143,14 @@
     "lat": 35.4653773,
     "lng": 139.6201667,
     "dist_km_from_tokyo": 27.4,
-    "dist_km_from_yokohama": 0.2
+    "dist_km_from_yokohama": 0.2,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "7d029eef1b46",
     "title": "市民法律講座（横須賀）",
     "category": "公開講義・市民講座",
-    "date": "",
+    "date": "2026-10-02",
     "time": "18:00〜20:00",
     "org": "神奈川県弁護士会",
     "area": "神奈川",
@@ -165,14 +168,15 @@
     "lat": 35.2841074,
     "lng": 139.655214,
     "dist_km_from_tokyo": 45.3,
-    "dist_km_from_yokohama": 20.4
+    "dist_km_from_yokohama": 20.4,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "525f9674320e",
     "title": "市民法律講座（小田原）",
     "category": "公開講義・市民講座",
-    "date": "",
-    "time": "調整中",
+    "date": "2026-10-16",
+    "time": "",
     "org": "神奈川県弁護士会",
     "area": "神奈川",
     "place": "小田原",
@@ -189,7 +193,8 @@
     "lat": 35.2561225,
     "lng": 139.1545547,
     "dist_km_from_tokyo": 72.9,
-    "dist_km_from_yokohama": 48.4
+    "dist_km_from_yokohama": 48.4,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "192ba53eaa75",
@@ -259,7 +264,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "09b7b9108ac7",
@@ -281,7 +287,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "d10eaac8d6c3",
@@ -329,7 +336,8 @@
     "lat": 35.6768601,
     "lng": 139.7638947,
     "dist_km_from_tokyo": 0.6,
-    "dist_km_from_yokohama": 26.7
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "543973da9770",
@@ -375,7 +383,8 @@
     "lat": 35.6768601,
     "lng": 139.7638947,
     "dist_km_from_tokyo": 0.6,
-    "dist_km_from_yokohama": 26.7
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "255861650f56",
@@ -399,7 +408,8 @@
     "lat": 35.6768601,
     "lng": 139.7638947,
     "dist_km_from_tokyo": 0.6,
-    "dist_km_from_yokohama": 26.7
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "8962263540ec",
@@ -430,7 +440,7 @@
     "date": "2026-10-22",
     "time": "",
     "org": "「法の日」週間実施東京地方委員会",
-    "area": "",
+    "area": "東京",
     "place": "",
     "fee": "",
     "access": "要問合せ",
@@ -440,10 +450,11 @@
     "source": "https://www.nichibenren.or.jp/event.html",
     "application_status": "不明",
     "cancelled": false,
-    "lat": null,
-    "lng": null,
-    "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "dist_km_from_tokyo": 0.6,
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "9d17d5c0b11d",
@@ -467,7 +478,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "e068d6f2dd32",
@@ -491,7 +503,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "8ad1674158c9",
@@ -515,7 +528,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "05d3056fb788",
@@ -539,7 +553,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "7015a1000f21",
@@ -564,7 +579,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "0a256483b696",
@@ -586,7 +602,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "ae2ec8fbd147",
@@ -610,7 +627,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "f641e975b6a2",
@@ -634,7 +652,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "ad0ad28157cf",
@@ -649,8 +668,8 @@
     "access": "要問合せ",
     "speakers": "",
     "fields": [
-      "教育法",
-      "子どもの権利"
+      "行政法",
+      "教育法"
     ],
     "confidence": "公式確認済",
     "source": "https://www.nichibenren.or.jp/event.html",
@@ -659,21 +678,24 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "79254be141f0",
     "title": "「揺さぶられる正義」上映会とクロストーク",
-    "category": "その他",
+    "category": "公開講義・市民講座",
     "date": "2026-08-26",
     "time": "",
     "org": "日本弁護士連合会",
     "area": "",
     "place": "",
     "fee": "",
-    "access": "要問合せ",
+    "access": "可",
     "speakers": "",
-    "fields": [],
+    "fields": [
+      "刑事法"
+    ],
     "confidence": "公式確認済",
     "source": "https://www.nichibenren.or.jp/event.html",
     "application_status": "不明",
@@ -681,7 +703,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "f5a643be401d",
@@ -710,7 +733,7 @@
   {
     "id": "155cd4fc4cac",
     "title": "【第79期司法修習生対象】日本司法支援センタースタッフ弁護士推薦選考面談について（Ｃ日程締切：2026年8月24日（月））",
-    "category": "受験生向けガイダンス",
+    "category": "就活・進路説明会",
     "date": "2026-08-24",
     "time": "",
     "org": "日本司法支援センター",
@@ -727,7 +750,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "e484490fbb54",
@@ -771,7 +795,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "7ffd5785092b",
@@ -786,7 +811,7 @@
     "access": "要問合せ",
     "speakers": "",
     "fields": [
-      "国際仲裁"
+      "仲裁・国際法"
     ],
     "confidence": "公式確認済",
     "source": "https://www.nichibenren.or.jp/event.html",
@@ -795,7 +820,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "33c642b87103",
@@ -807,7 +833,7 @@
     "area": "兵庫",
     "place": "関西学院大学 神戸三田キャンパス",
     "fee": "",
-    "access": "不可",
+    "access": "要問合せ",
     "speakers": "",
     "fields": [
       "情報法",
@@ -815,12 +841,13 @@
     ],
     "confidence": "公式確認済",
     "source": "https://inlaw.jp/",
-    "application_status": "未開始",
+    "application_status": "不明",
     "cancelled": false,
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "dd4621bda37c",
@@ -830,13 +857,13 @@
     "time": "",
     "org": "情報ネットワーク法学会",
     "area": "オンライン",
-    "place": "",
+    "place": "オンライン",
     "fee": "",
-    "access": "不可",
+    "access": "要問合せ",
     "speakers": "",
     "fields": [
-      "情報法",
-      "サイバーセキュリティ"
+      "情報セキュリティ法",
+      "情報法"
     ],
     "confidence": "公式確認済",
     "source": "https://inlaw.jp/",
@@ -845,7 +872,8 @@
     "lat": 35.6780551,
     "lng": 139.7668527,
     "dist_km_from_tokyo": 0.4,
-    "dist_km_from_yokohama": 27.0
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "402c4a978636",
@@ -857,7 +885,7 @@
     "area": "",
     "place": "",
     "fee": "",
-    "access": "不可",
+    "access": "要問合せ",
     "speakers": "",
     "fields": [
       "情報法",
@@ -870,7 +898,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "e5240e99bafb",
@@ -882,10 +911,9 @@
     "area": "",
     "place": "",
     "fee": "",
-    "access": "不可",
+    "access": "要問合せ",
     "speakers": "",
     "fields": [
-      "プロバイダ責任制限法",
       "情報法"
     ],
     "confidence": "公式確認済",
@@ -895,7 +923,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "a34355964623",
@@ -1095,9 +1124,9 @@
   {
     "id": "0d8b4be5d4a5",
     "title": "東京地方検察庁体験型プログラム（東京地方検察庁主催）",
-    "category": "就活・進路説明会",
+    "category": "受験生向けガイダンス",
     "date": "",
-    "time": "13:00〜17:00頃",
+    "time": "午後1時から午後4時頃まで",
     "org": "東京地方検察庁",
     "area": "東京",
     "place": "東京地方検察庁",
@@ -1109,34 +1138,38 @@
     ],
     "confidence": "公式確認済",
     "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
-    "application_status": "受付中",
+    "application_status": "締切",
     "cancelled": false,
     "lat": 35.6757454,
     "lng": 139.7547979,
     "dist_km_from_tokyo": 1.3,
-    "dist_km_from_yokohama": 26.2
+    "dist_km_from_yokohama": 26.2,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "7ef42d5a64b0",
     "title": "法曹という仕事（最高裁判所・法務省・最高検察庁・日本弁護士連合会主催）",
-    "category": "受験生向けガイダンス",
+    "category": "その他",
     "date": "",
-    "time": "13:00〜15:30",
+    "time": "午後1時30分から午後4時30分まで",
     "org": "最高裁判所、法務省、最高検察庁、日本弁護士連合会",
     "area": "東京",
     "place": "最高裁判所",
     "fee": "",
     "access": "不可",
     "speakers": "",
-    "fields": [],
+    "fields": [
+      "その他"
+    ],
     "confidence": "公式確認済",
     "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
-    "application_status": "受付中",
+    "application_status": "締切",
     "cancelled": false,
     "lat": 35.6802503,
     "lng": 139.7437142,
     "dist_km_from_tokyo": 2.1,
-    "dist_km_from_yokohama": 26.3
+    "dist_km_from_yokohama": 26.3,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "9fbfd72a2bd9",
@@ -1172,15 +1205,18 @@
     "fee": "",
     "access": "要問合せ",
     "speakers": "",
-    "fields": [],
+    "fields": [
+      "刑事法"
+    ],
     "confidence": "公式確認済",
     "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
-    "application_status": "締切",
+    "application_status": "不明",
     "cancelled": false,
     "lat": 35.6764115,
     "lng": 139.7533497,
     "dist_km_from_tokyo": 1.4,
-    "dist_km_from_yokohama": 26.2
+    "dist_km_from_yokohama": 26.2,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "9af5c8b40bcf",
@@ -1275,7 +1311,7 @@
   {
     "id": "5654093d80d4",
     "title": "体験型プログラム（大阪地方検察庁）",
-    "category": "就活・進路説明会",
+    "category": "受験生向けガイダンス",
     "date": "",
     "time": "",
     "org": "大阪地方検察庁",
@@ -1284,15 +1320,18 @@
     "fee": "",
     "access": "要問合せ",
     "speakers": "",
-    "fields": [],
+    "fields": [
+      "刑事法"
+    ],
     "confidence": "公式確認済",
     "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
-    "application_status": "締切",
+    "application_status": "不明",
     "cancelled": false,
     "lat": 34.6944035,
     "lng": 135.4905511,
     "dist_km_from_tokyo": 403.8,
-    "dist_km_from_yokohama": 385.6
+    "dist_km_from_yokohama": 385.6,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "c79db9aa241c",
@@ -1408,7 +1447,8 @@
     "lat": 36.52198,
     "lng": 139.033483,
     "dist_km_from_tokyo": 114.4,
-    "dist_km_from_yokohama": 128.8
+    "dist_km_from_yokohama": 128.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "077487a2264a",
@@ -1418,21 +1458,20 @@
     "time": "16:00〜17:00",
     "org": "大阪公立大学法学研究科（法曹養成専攻）",
     "area": "オンライン",
-    "place": "",
+    "place": "オンライン開催",
     "fee": "",
     "access": "可",
     "speakers": "",
-    "fields": [
-      "法科大学院入試"
-    ],
+    "fields": [],
     "confidence": "公式確認済",
     "source": "https://www.omu.ac.jp/lawschool/admissions/seminar/",
     "application_status": "受付中",
     "cancelled": false,
-    "lat": 35.6780551,
-    "lng": 139.7668527,
-    "dist_km_from_tokyo": 0.4,
-    "dist_km_from_yokohama": 27.0
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "62168d1aa0f5",
@@ -2190,7 +2229,8 @@
     "lat": 35.4715173,
     "lng": 139.6275394,
     "dist_km_from_tokyo": 26.5,
-    "dist_km_from_yokohama": 0.8
+    "dist_km_from_yokohama": 0.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "ffd4da715f78",
@@ -2205,16 +2245,17 @@
     "access": "要問合せ",
     "speakers": "",
     "fields": [
-      "法改正"
+      "法改正情報"
     ],
     "confidence": "公式確認済",
     "source": "https://www.authense.jp/komon/seminar/",
-    "application_status": "不明",
+    "application_status": "未開始",
     "cancelled": false,
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "4e9e90ec150f",
@@ -2233,19 +2274,20 @@
     ],
     "confidence": "公式確認済",
     "source": "https://www.authense.jp/komon/seminar/",
-    "application_status": "不明",
+    "application_status": "未開始",
     "cancelled": false,
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "a3fbf24a6864",
     "title": "ビジネスパーソンが知るべき会社法の基礎知識 ～「株式会社とは何か」から始める会社法入門～",
     "category": "公開講義・市民講座",
     "date": "2026-10-01",
-    "time": "10:00〜2026-11-30 17:00",
+    "time": "10:00〜17:00",
     "org": "プロネクサス セミナー Webゼミ",
     "area": "オンライン",
     "place": "オンライン",
@@ -2264,7 +2306,8 @@
     "lat": 35.6780551,
     "lng": 139.7668527,
     "dist_km_from_tokyo": 0.4,
-    "dist_km_from_yokohama": 27.0
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "da86cfb36df2",
@@ -2303,7 +2346,7 @@
     "place": "オンライン（後日動画視聴も可）",
     "fee": "",
     "access": "要問合せ",
-    "speakers": "中島菜子, 井本吉俊, 伊藤伸明",
+    "speakers": "中島菜子,井本吉俊,伊藤伸明",
     "fields": [
       "独占禁止法/競争法",
       "独占禁止法/競争法アドバイス",
@@ -2316,7 +2359,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "cf5c4a639f85",
@@ -2383,7 +2427,7 @@
     "place": "大手町フィナンシャルシティ カンファレンスセンター3F",
     "fee": "",
     "access": "要問合せ",
-    "speakers": "箕輪俊介, 山本匡, 蓑和秀夫氏（株式会社 KPMG FAS ディレクター）",
+    "speakers": "箕輪俊介,山本匡,蓑和秀夫氏（株式会社 KPMG FAS ディレクター）",
     "fields": [
       "危機管理/リスクマネジメント/コンプライアンス",
       "コーポレート",
@@ -2396,7 +2440,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "61c6a47140a5",
@@ -2409,7 +2454,7 @@
     "place": "TODA HALL & CONFERENCE TOKYO",
     "fee": "",
     "access": "要問合せ",
-    "speakers": "藤原総一郎, 松尾博憲",
+    "speakers": "藤原総一郎,松尾博憲",
     "fields": [
       "テクノロジー",
       "AI・ロボット",
@@ -2423,7 +2468,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "ce79ba7bdf47",
@@ -2465,7 +2511,7 @@
     "place": "オンライン（ライブ配信）",
     "fee": "",
     "access": "要問合せ",
-    "speakers": "松本渉, 橋本道雄氏（マーシュジャパン株式会社 プライベートエクイティ ＆ M&Aサービス シニアバイスプレジデント）",
+    "speakers": "松本渉,橋本道雄氏（マーシュジャパン株式会社 プライベートエクイティ ＆ M&Aサービス シニアバイスプレジデント）",
     "fields": [
       "M&A",
       "M&A/企業再編",
@@ -2478,7 +2524,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "d611d849e315",
@@ -2493,7 +2540,7 @@
     "access": "要問合せ",
     "speakers": "",
     "fields": [
-      "個人法務"
+      "ライフサイエンス・薬事・医療"
     ],
     "confidence": "公式確認済",
     "source": "https://www.ohebashi.com/jp/seminar.php",
@@ -2502,7 +2549,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "0dca061f8bf3",
@@ -2526,7 +2574,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "a862d0be3375",
@@ -2550,7 +2599,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "9d631167d74a",
@@ -2574,7 +2624,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "ca56d335d3bf",
@@ -2598,7 +2649,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "cc0434c04fa2",
@@ -2622,7 +2674,8 @@
     "lat": 35.6780551,
     "lng": 139.7668527,
     "dist_km_from_tokyo": 0.4,
-    "dist_km_from_yokohama": 27.0
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "87e52bf1cbe3",
@@ -2646,12 +2699,13 @@
     "lat": 35.6780551,
     "lng": 139.7668527,
     "dist_km_from_tokyo": 0.4,
-    "dist_km_from_yokohama": 27.0
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "a452c305b8cf",
     "title": "【MOBIO知財セミナー】専門知識ゼロから始める！ものづくり企業のための契約トラブル予防講座",
-    "category": "公開講義・市民講座",
+    "category": "学会・専門シンポジウム",
     "date": "2026-09-18",
     "time": "",
     "org": "大江橋法律事務所",
@@ -2670,7 +2724,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "fbc85ebc91f5",
@@ -2695,7 +2750,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "db0cd03b064b",
@@ -2719,7 +2775,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "d0070161436f",
@@ -2743,7 +2800,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "6e386bbc3f6a",
@@ -2767,7 +2825,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "e77efd98813a",
@@ -2791,7 +2850,8 @@
     "lat": 35.6780551,
     "lng": 139.7668527,
     "dist_km_from_tokyo": 0.4,
-    "dist_km_from_yokohama": 27.0
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "1b4ae1c6865e",
@@ -2815,7 +2875,8 @@
     "lat": 35.6780551,
     "lng": 139.7668527,
     "dist_km_from_tokyo": 0.4,
-    "dist_km_from_yokohama": 27.0
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "290eafa872a9",
@@ -2830,7 +2891,8 @@
     "access": "要問合せ",
     "speakers": "",
     "fields": [
-      "人事・労務"
+      "人事・労務",
+      "危機管理・コンプライアンス"
     ],
     "confidence": "公式確認済",
     "source": "https://www.ohebashi.com/jp/seminar.php",
@@ -2839,7 +2901,8 @@
     "lat": 35.6780551,
     "lng": 139.7668527,
     "dist_km_from_tokyo": 0.4,
-    "dist_km_from_yokohama": 27.0
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "056931c76805",
@@ -2888,7 +2951,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "6078a3c6fcf5",
@@ -2938,7 +3002,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "a580344ae5d8",
@@ -2965,7 +3030,7 @@
   {
     "id": "c49cf4f256e4",
     "title": "「通報案件対応の実践的スキル獲得セミナー～信頼ある内部通報制度構築を目指して～（全２回）」",
-    "category": "その他",
+    "category": "公開講義・市民講座",
     "date": "",
     "time": "",
     "org": "松田綜合法律事務所",
@@ -2975,7 +3040,8 @@
     "access": "要問合せ",
     "speakers": "",
     "fields": [
-      "その他"
+      "労働法",
+      "コンプライアンス"
     ],
     "confidence": "公式確認済",
     "source": "https://jmatsuda-law.com/category/seminars/",
@@ -2984,7 +3050,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "484b04d335da",
@@ -3021,7 +3088,8 @@
     "access": "要問合せ",
     "speakers": "",
     "fields": [
-      "労働法"
+      "労働法",
+      "コンプライアンス"
     ],
     "confidence": "公式確認済",
     "source": "https://jmatsuda-law.com/category/seminars/",
@@ -3030,7 +3098,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "cc1346bcf3c1",
@@ -3054,7 +3123,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "9f54b4df328d",
@@ -3100,12 +3170,13 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "d9032bf00dbf",
     "title": "「速報！LIVE解説～八王子・自動運転バス事故の責任と捜査～(無料)」",
-    "category": "その他",
+    "category": "公開講義・市民講座",
     "date": "",
     "time": "",
     "org": "松田綜合法律事務所",
@@ -3114,7 +3185,9 @@
     "fee": "無料",
     "access": "要問合せ",
     "speakers": "",
-    "fields": [],
+    "fields": [
+      "刑事法"
+    ],
     "confidence": "公式確認済",
     "source": "https://jmatsuda-law.com/category/seminars/",
     "application_status": "不明",
@@ -3122,7 +3195,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "0a847f004001",
@@ -3158,7 +3232,7 @@
     "area": "",
     "place": "",
     "fee": "",
-    "access": "不可",
+    "access": "要問合せ",
     "speakers": "",
     "fields": [
       "刑法"
@@ -3170,7 +3244,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "a4dba2b1a175",
@@ -3182,7 +3257,7 @@
     "area": "",
     "place": "",
     "fee": "",
-    "access": "不可",
+    "access": "要問合せ",
     "speakers": "",
     "fields": [
       "刑法"
@@ -3194,7 +3269,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "c93e6e52baa2",
@@ -3308,7 +3384,7 @@
     "access": "可",
     "speakers": "",
     "fields": [
-      "法曹養成"
+      "法学教育"
     ],
     "confidence": "公式確認済",
     "source": "https://www.lskyokai.jp/category/event/",
@@ -3317,7 +3393,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "208228c820ce",
@@ -3341,7 +3418,8 @@
     "lat": null,
     "lng": null,
     "dist_km_from_tokyo": null,
-    "dist_km_from_yokohama": null
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   },
   {
     "id": "34b225b24d1b",
@@ -3530,5 +3608,2715 @@
     "lng": null,
     "dist_km_from_tokyo": null,
     "dist_km_from_yokohama": null
+  },
+  {
+    "id": "d0e22549cda0",
+    "title": "東京大学リカレント教育プログラム「AI法務リーダーシップ・プログラム」",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "東京大学",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "AI・法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.j.u-tokyo.ac.jp/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "51fbb244ddcd",
+    "title": "第303回比較法政セミナー ”Gibt es eine Verwaltungsrechtstheorie?”",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-09-02",
+    "time": "",
+    "org": "東京大学大学院法学政治学研究科",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "行政法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.j.u-tokyo.ac.jp/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "34496cce2cb1",
+    "title": "日本弁護士連合会第６８回人権擁護大会プレシンポジウム「出産、子育てにおける意思決定と支援を考える」",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-08-24",
+    "time": "",
+    "org": "日本弁護士連合会",
+    "area": "東京",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "人権"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.toben.or.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "dist_km_from_tokyo": 0.6,
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "927c1361eb97",
+    "title": "【無料電話相談】2025年度「こころといのちの法律相談」",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "東京弁護士会",
+    "area": "東京",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://www.toben.or.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "dist_km_from_tokyo": 0.6,
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "9ededb7e93c9",
+    "title": "日弁連子どもの権利委員会夏季合宿「子どもコミッショナーはなぜ必要か」「共に学ぶために～就園・就学相談に向けて～」",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-08-25",
+    "time": "",
+    "org": "日本弁護士連合会子どもの権利委員会",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "子どもの権利"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.nichibenren.or.jp/event.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "580e57ea01cb",
+    "title": "法曹という仕事（法曹三者共催企画）",
+    "category": "就活・進路説明会",
+    "date": "2026-08-21",
+    "time": "",
+    "org": "法曹三者",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://www.nichibenren.or.jp/event.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "52839d7bfad9",
+    "title": "第24回情報ネットワーク法学会総会",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "情報ネットワーク法学会",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "不可",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://inlaw.jp/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "a830d37a4cd0",
+    "title": "慶應義塾大学「国際仲裁司法研究所」開所式",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "慶應義塾大学",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "国際仲裁"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.keio.ac.jp/ja/law/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "c3bcb69453e9",
+    "title": "日本公法学会 総会研究会",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-10-10",
+    "time": "",
+    "org": "日本公法学会",
+    "area": "岡山",
+    "place": "岡山大学",
+    "fee": "",
+    "access": "不可",
+    "speakers": "",
+    "fields": [
+      "公法学"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.asas.or.jp/publiclaw/meeting.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6889496,
+    "lng": 133.9220359,
+    "dist_km_from_tokyo": 542.4,
+    "dist_km_from_yokohama": 525.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "58ec063a93bf",
+    "title": "日弁連シンポジウム「夫婦別姓も選べる社会へ～婚姻と氏から家族を考える～」",
+    "category": "学会・専門シンポジウム",
+    "date": "",
+    "time": "",
+    "org": "日本弁護士連合会",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "民法",
+      "家族法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.toben.or.jp/know/iinkai/seibyoudou/symposium/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "5ead2944ff92",
+    "title": "【弁護士・自治体等職員向け】公開講座「泉佐野市ふるさと納税訴訟と特別地方交付税減額訴訟～『行政訴訟は無駄』を覆し、法治国家と地方自治を守った最高裁逆転の歴史的勝利～」",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "東京弁護士会 自治体等法務研究部",
+    "area": "東京",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "行政法",
+      "地方自治法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.toben.or.jp/know/houritsukenkyuubu/jititaitouhoumu/post_44.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "dist_km_from_tokyo": 0.6,
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "85991d860cd2",
+    "title": "【弁護士・自治体等職員向け】公開講座「未完の地方分権改革と国・自治体間の争訟制度」",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "東京弁護士会 自治体等法務研究部",
+    "area": "東京",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "行政法",
+      "地方自治法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.toben.or.jp/know/houritsukenkyuubu/jititaitouhoumu/post_44.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "dist_km_from_tokyo": 0.6,
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "15a8e79e007a",
+    "title": "東京国際法セミナー(Tokyo International Law Seminar)参加者募集",
+    "category": "その他",
+    "date": "2026-08-24",
+    "time": "",
+    "org": "外務省、日本弁護士連合会、国際法学会、法務省",
+    "area": "東京",
+    "place": "国連大学",
+    "fee": "無料",
+    "access": "不可",
+    "speakers": "",
+    "fields": [
+      "国際法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://jsil.jp/outreach-lecture",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": 35.6624724,
+    "lng": 139.7082236,
+    "dist_km_from_tokyo": 5.7,
+    "dist_km_from_yokohama": 23.2,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "d8d43e035e74",
+    "title": "検察庁説明会~~東京~~（東京高等検察庁・法務省共催）",
+    "category": "受験生向けガイダンス",
+    "date": "",
+    "time": "午後1時30分〜午後4時",
+    "org": "東京高等検察庁、法務省",
+    "area": "東京",
+    "place": "法務省",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "刑事法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": 35.6764115,
+    "lng": 139.7533497,
+    "dist_km_from_tokyo": 1.4,
+    "dist_km_from_yokohama": 26.2,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "70d05b2ee60a",
+    "title": "検察庁説明会~~大阪~~（大阪高等検察庁・法務省共催）",
+    "category": "受験生向けガイダンス",
+    "date": "",
+    "time": "午後1時30分〜午後4時",
+    "org": "大阪高等検察庁、法務省",
+    "area": "大阪",
+    "place": "大阪地方検察庁",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "刑事法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": 34.6944035,
+    "lng": 135.4905511,
+    "dist_km_from_tokyo": 403.8,
+    "dist_km_from_yokohama": 385.6,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "d9e3323da4ba",
+    "title": "シンポジウム「法学部生への法学教育支援のあり方」（法務省総合研究所）",
+    "category": "学会・専門シンポジウム",
+    "date": "",
+    "time": "",
+    "org": "法務省総合研究所",
+    "area": "東京",
+    "place": "国際法学総合センター",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "法学教育"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "0aa7f2b5faf4",
+    "title": "検察庁説明会~~東京~~（過去実施分）",
+    "category": "受験生向けガイダンス",
+    "date": "",
+    "time": "",
+    "org": "法務省、最高検察庁",
+    "area": "東京",
+    "place": "法務省",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "刑事法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6764115,
+    "lng": 139.7533497,
+    "dist_km_from_tokyo": 1.4,
+    "dist_km_from_yokohama": 26.2,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "6bcadb738401",
+    "title": "法曹という仕事（最高裁判所・法務省・最高検察庁・日本弁護士連合会、過去実施分）",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "最高裁判所、法務省、最高検察庁、日本弁護士連合会",
+    "area": "東京",
+    "place": "最高裁判所",
+    "fee": "",
+    "access": "不可",
+    "speakers": "",
+    "fields": [
+      "その他"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6802503,
+    "lng": 139.7437142,
+    "dist_km_from_tokyo": 2.1,
+    "dist_km_from_yokohama": 26.3,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "d57133a47eb0",
+    "title": "検察庁説明会~~大阪~~（過去実施分）",
+    "category": "受験生向けガイダンス",
+    "date": "",
+    "time": "",
+    "org": "法務省、最高検察庁",
+    "area": "大阪",
+    "place": "大阪地方検察庁",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "刑事法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6944035,
+    "lng": 135.4905511,
+    "dist_km_from_tokyo": 403.8,
+    "dist_km_from_yokohama": 385.6,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "1c978852cb76",
+    "title": "体験型プログラム（東京地方検察庁、過去実施分）",
+    "category": "受験生向けガイダンス",
+    "date": "",
+    "time": "",
+    "org": "東京地方検察庁",
+    "area": "東京",
+    "place": "東京地方検察庁",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "刑事法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6757454,
+    "lng": 139.7547979,
+    "dist_km_from_tokyo": 1.3,
+    "dist_km_from_yokohama": 26.2,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "e0121669aa66",
+    "title": "第79期司法修習生および第80期司法修習生予定者等全国就職合同説明会",
+    "category": "就活・進路説明会",
+    "date": "2026-11-26",
+    "time": "【土日】10:00〜16:45（6コマ）／【平日】13:00〜18:45（6コマ）",
+    "org": "東京三弁護士会（東京弁護士会、第一東京弁護士会、第二東京弁護士会）、日本弁護士連合会、関東弁護士会連合会",
+    "area": "オンライン",
+    "place": "オンライン就職合同説明会専用サイト",
+    "fee": "",
+    "access": "不可",
+    "speakers": "",
+    "fields": [
+      "法曹・司法制度"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.toben.or.jp/admission/syusyusei/setsumeikai/",
+    "application_status": "未開始",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "fc53b9714e9d",
+    "title": "東京三弁護士会司法修習予定者等就職合同説明会",
+    "category": "就活・進路説明会",
+    "date": "",
+    "time": "",
+    "org": "東京三弁護士会（東京弁護士会等）",
+    "area": "東京",
+    "place": "",
+    "fee": "",
+    "access": "不可",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://www.toben.or.jp/admission/syusyusei/",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "dist_km_from_tokyo": 0.6,
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "940e375cef6a",
+    "title": "法学研究科（修士課程・博士後期課程）進学説明会",
+    "category": "受験生向けガイダンス",
+    "date": "",
+    "time": "",
+    "org": "早稲田大学大学院法学研究科",
+    "area": "東京",
+    "place": "早稲田キャンパス8号館またはオンライン",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "法学"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.waseda.jp/inst/admission/graduate/visiting/",
+    "application_status": "未開始",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "cc7c0532ff01",
+    "title": "法学研究科法曹養成専攻（法科大学院）入試説明動画公開",
+    "category": "受験生向けガイダンス",
+    "date": "",
+    "time": "",
+    "org": "早稲田大学大学院法学研究科法曹養成専攻",
+    "area": "オンライン",
+    "place": "YouTube",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "法学"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.waseda.jp/inst/admission/graduate/visiting/",
+    "application_status": "未開始",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "3fc75bb159d1",
+    "title": "憲法記念行事 弁護士と歩こう!渋谷再開発法律探検スタンプラリー",
+    "category": "公開講義・市民講座",
+    "date": "2026-10-22",
+    "time": "",
+    "org": "第二東京弁護士会",
+    "area": "東京",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "憲法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://niben.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "dist_km_from_tokyo": 0.6,
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "0a146d0e00bd",
+    "title": "シンポジウム「憲法と国際人権法の理念に呼応した外国人政策のために」",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-10-20",
+    "time": "",
+    "org": "第二東京弁護士会",
+    "area": "東京",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "憲法",
+      "国際人権法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://niben.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "dist_km_from_tokyo": 0.6,
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "f0d824d2b57c",
+    "title": "テレビ台東セミナー・法律相談会",
+    "category": "公開講義・市民講座",
+    "date": "2026-10-10",
+    "time": "",
+    "org": "第二東京弁護士会",
+    "area": "東京",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://niben.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "dist_km_from_tokyo": 0.6,
+    "dist_km_from_yokohama": 26.7,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "d6eaa2b44610",
+    "title": "江戸川区にて高齢者・障害者のための無料法律相談会",
+    "category": "公開講義・市民講座",
+    "date": "2026-09-26",
+    "time": "",
+    "org": "第二東京弁護士会",
+    "area": "東京",
+    "place": "江戸川区",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "高齢者福祉",
+      "障害者福祉"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://niben.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.7066318,
+    "lng": 139.868677,
+    "dist_km_from_tokyo": 9.6,
+    "dist_km_from_yokohama": 34.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "55582bd2f65b",
+    "title": "第68回人権擁護大会プレシンポジウム「日本のCNに貢献するプロセスにおける原子力発電-技術開発の現状と展望」",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-09-17",
+    "time": "",
+    "org": "第二東京弁護士会",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "人権",
+      "環境法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://niben.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "ae82cf61251d",
+    "title": "セミナー「国際会議の作法2026-国際会議デビューを応援します-」",
+    "category": "その他",
+    "date": "2026-09-11",
+    "time": "",
+    "org": "第二東京弁護士会",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "国際法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://niben.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "0a88c8fb5309",
+    "title": "日本弁護士連合会第68回人権擁護大会シンポジウム「出産・子育てをめぐる意思決定と支援を考える」",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-08-24",
+    "time": "",
+    "org": "日本弁護士連合会",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "人権",
+      "家族法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://niben.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "a8aa0c359058",
+    "title": "弁護士採用を検討する企業様向け説明会",
+    "category": "就活・進路説明会",
+    "date": "",
+    "time": "",
+    "org": "第二東京弁護士会",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://niben.jp/news/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "b3ad64b9c454",
+    "title": "Competition Law Update 2026 ―法務担当者が押さえるべき競争法の最新実務―",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-09-17",
+    "time": "15:00〜17:15",
+    "org": "長島・大野・常松法律事務所",
+    "area": "東京",
+    "place": "長島・大野・常松法律事務所 東京オフィス",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "中島菜子,井本吉俊,一色毅,小川聖史,伊藤伸明",
+    "fields": [
+      "独占禁止法/競争法",
+      "企業結合規制対応",
+      "カルテル事件対応",
+      "その他独占禁止法違反事件対応"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.nagashima.com/seminars/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "162a28f8ffa4",
+    "title": "なぜ勝訴するだけでは足りないのか～ケーススタディで学ぶ国際仲裁・国際訴訟における損害賠償請求と損害額算定の基礎・実務上の留意点",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-09-02",
+    "time": "15:00〜17:10",
+    "org": "長島・大野・常松法律事務所",
+    "area": "東京",
+    "place": "長島・大野・常松法律事務所 東京オフィス",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "池田順一,ジャスティン・イー,梶原啓,Calvin Qiu氏（Director, Berkeley Research Group（BRG））",
+    "fields": [
+      "紛争解決",
+      "民事・商事争訟",
+      "海外紛争（争訟）対応",
+      "国際仲裁"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.nagashima.com/seminars/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "7ad863023211",
+    "title": "系統用蓄電池ビジネスに関する最新法務 ～フルマーチャント案件・トーリング案件・長期脱炭素電源オークション案件を中心に～",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-10-06",
+    "time": "13:00〜15:00",
+    "org": "",
+    "area": "東京",
+    "place": "紀尾井フォーラム（オンラインライブ受講、後日動画視聴も可）",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "藤本祐太郎,渡邉啓久",
+    "fields": [
+      "インフラ/エネルギー/環境",
+      "発電プロジェクト/再生可能エネルギー",
+      "電力・ガス供給"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.nagashima.com/seminars/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "e448f8578c63",
+    "title": "大阪開催：頻出事例から学ぶハラスメント対応の最新実務 ～カスタマーハラスメントと通報対応を中心に～",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-09-11",
+    "time": "14:00〜17:30",
+    "org": "長島・大野・常松法律事務所",
+    "area": "大阪",
+    "place": "ヒルトン大阪",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "細川智史,柳澤宏輝,清水美彩惠,井上聡,辺誠祐,原昌登教授（成蹊大学法学部）",
+    "fields": [
+      "労働法",
+      "紛争解決",
+      "労働法アドバイス",
+      "労働争訟",
+      "民事・商事争訟",
+      "危機管理/リスクマネジメント/コンプライアンス"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.nagashima.com/seminars/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.7000082,
+    "lng": 135.4959902,
+    "dist_km_from_tokyo": 403.1,
+    "dist_km_from_yokohama": 385.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "0901481794eb",
+    "title": "≪大阪開催≫ 優越的地位濫用規制・取適法のコンプライアンス",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-08-21",
+    "time": "",
+    "org": "北浜法律事務所",
+    "area": "大阪",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "籔内 俊輔",
+    "fields": [
+      "リスクマネジメント・コンプライアンス",
+      "独占禁止法・競争法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.kitahama.or.jp/seminars/",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": 34.6937569,
+    "lng": 135.5014539,
+    "dist_km_from_tokyo": 402.9,
+    "dist_km_from_yokohama": 384.6,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "137d2baa7487",
+    "title": "「公益通報対応業務の実務ガイド2026 ～受付者・調査者のためのQ&A～」セミナー",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-09-10",
+    "time": "",
+    "org": "株式会社労務行政",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "中村麻美弁護士",
+    "fields": [
+      "労働法",
+      "コンプライアンス"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://kunihiro-law.com/seminar/",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "e2c18b96e8f7",
+    "title": "実務者のための陸上養殖ビジネス新規参入：リスクマネジメントと法的留意点",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "一般社団法人企業研究会",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "菅原清暁弁護士",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://jmatsuda-law.com/category/seminars/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "f8b297410f6c",
+    "title": "鈴木 みなみ弁護士 外部セミナー登壇のお知らせ",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "鈴木みなみ弁護士",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://jmatsuda-law.com/category/seminars/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "470ed0be7435",
+    "title": "菅原 清暁弁護士 外部セミナー登壇のお知らせ",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "菅原清暁弁護士",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://jmatsuda-law.com/category/seminars/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "5687f0a1a141",
+    "title": "「労働紛争・労務トラブル、情報セキュリティ紛争、営業秘密関連紛争の予防に関する連続オンラインセミナー」",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "松田綜合法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "労働法",
+      "情報法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://jmatsuda-law.com/category/seminars/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "d5f4e924bd2b",
+    "title": "市民法律講座「生活 〜生活における金の使い方・守り方〜」",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "午前9時15分〜午後0時15分",
+    "org": "横浜市市民局広聴相談課市民相談室",
+    "area": "神奈川",
+    "place": "横浜市市民活動支援センター（関内ホール）小ホール",
+    "fee": "無料（テキスト希望者は1,000円）",
+    "access": "可",
+    "speakers": "岩崎健太",
+    "fields": [
+      "消費者法",
+      "民法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/shiminsodan/sodanshitsu/kouza.html",
+    "application_status": "未開始",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "707948372eed",
+    "title": "中央省庁合同業務説明会",
+    "category": "就活・進路説明会",
+    "date": "",
+    "time": "",
+    "org": "法科大学院協会",
+    "area": "",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://www.lskyokai.jp/category/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "e837948e0060",
+    "title": "司法修習プレセミナーのお知らせ（9月9日（水）開催）",
+    "category": "受験生向けガイダンス",
+    "date": "2026-09-09",
+    "time": "",
+    "org": "兵庫県弁護士会",
+    "area": "兵庫",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://www.hyogoben.or.jp/news/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6679511,
+    "lng": 135.1640587,
+    "dist_km_from_tokyo": 433.2,
+    "dist_km_from_yokohama": 415.3,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "d5c85d0094cb",
+    "title": "夏季特別企画「弁護士に会ってみよう！」",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "兵庫県弁護士会",
+    "area": "兵庫",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://www.hyogoben.or.jp/news/category/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6679511,
+    "lng": 135.1640587,
+    "dist_km_from_tokyo": 433.2,
+    "dist_km_from_yokohama": 415.3,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "d9246c9ec1da",
+    "title": "令和8年度法の日週間行事「裁判員等経験者にきいてみよう！」",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "兵庫県弁護士会",
+    "area": "兵庫",
+    "place": "",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "刑事法",
+      "裁判員制度"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.hyogoben.or.jp/news/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6679511,
+    "lng": 135.1640587,
+    "dist_km_from_tokyo": 433.2,
+    "dist_km_from_yokohama": 415.3,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "2056528c4782",
+    "title": "第17回環境法に関するサマースクール",
+    "category": "学会・専門シンポジウム",
+    "date": "",
+    "time": "",
+    "org": "兵庫県弁護士会",
+    "area": "兵庫",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "環境法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.hyogoben.or.jp/news/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6679511,
+    "lng": 135.1640587,
+    "dist_km_from_tokyo": 433.2,
+    "dist_km_from_yokohama": 415.3,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "10543856df9e",
+    "title": "「夏休みジュニアロースクール」（応募上限数に達しました）",
+    "category": "公開講義・市民講座",
+    "date": "2026-08-20",
+    "time": "",
+    "org": "兵庫県弁護士会",
+    "area": "兵庫",
+    "place": "",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://www.hyogoben.or.jp/news/",
+    "application_status": "締切",
+    "cancelled": false,
+    "lat": 34.6679511,
+    "lng": 135.1640587,
+    "dist_km_from_tokyo": 433.2,
+    "dist_km_from_yokohama": 415.3,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "32cc6bc8855c",
+    "title": "令和８年度法の日週間行事「裁判員等経験者にきいてみよう！」の開催について",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "兵庫県弁護士会",
+    "area": "兵庫",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "裁判員制度"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.hyogoben.or.jp/news/category/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6679511,
+    "lng": 135.1640587,
+    "dist_km_from_tokyo": 433.2,
+    "dist_km_from_yokohama": 415.3,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "c220e2cef34c",
+    "title": "令和７年度「法の日」週間行事「裁判員等経験者にきいてみよう！」",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "兵庫県弁護士会",
+    "area": "兵庫",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "裁判員制度"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.hyogoben.or.jp/news/category/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6679511,
+    "lng": 135.1640587,
+    "dist_km_from_tokyo": 433.2,
+    "dist_km_from_yokohama": 415.3,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "edcaf2c3dc71",
+    "title": "暮らしとこころの相談会(全国一斉・無料相談)",
+    "category": "その他",
+    "date": "2026-09-15",
+    "time": "",
+    "org": "札幌弁護士会",
+    "area": "北海道",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [],
+    "confidence": "公式確認済",
+    "source": "https://satsuben.or.jp/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 43.4603175,
+    "lng": 143.3307158,
+    "dist_km_from_tokyo": 917.1,
+    "dist_km_from_yokohama": 944.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "b38fba5e7129",
+    "title": "第68回日本弁護士連合会人権擁護大会プレシンポジウム シングルマザーの貧困を考えるー「働いても貧困」の社会を克服するためにー",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-08-29",
+    "time": "",
+    "org": "日本弁護士連合会",
+    "area": "北海道",
+    "place": "",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "人権",
+      "貧困問題"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://satsuben.or.jp/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 43.4603175,
+    "lng": 143.3307158,
+    "dist_km_from_tokyo": 917.1,
+    "dist_km_from_yokohama": 944.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "3a34d061b2b1",
+    "title": "「村木厚子さんに学ぶ！『驚きの刑事司法』～再審法改正と刑事司法の課題～」市民向け集会",
+    "category": "公開講義・市民講座",
+    "date": "2026-08-11",
+    "time": "",
+    "org": "札幌弁護士会",
+    "area": "北海道",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "村木厚子",
+    "fields": [
+      "刑事法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://satsuben.or.jp/event/",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": 43.4603175,
+    "lng": 143.3307158,
+    "dist_km_from_tokyo": 917.1,
+    "dist_km_from_yokohama": 944.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "fc6bf9422c0f",
+    "title": "シンポジウム「生まれてきてはいけない命などあるのか－優生思想、差別、戦争の歴史をこえて」",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-09-05",
+    "time": "",
+    "org": "札幌弁護士会",
+    "area": "北海道",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "人権"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://satsuben.or.jp/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 43.4603175,
+    "lng": 143.3307158,
+    "dist_km_from_tokyo": 917.1,
+    "dist_km_from_yokohama": 944.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "a70393e4e856",
+    "title": "学習会「LGBTQ＋の基本のキとSOGIハラスメント」",
+    "category": "公開講義・市民講座",
+    "date": "2026-09-25",
+    "time": "",
+    "org": "札幌弁護士会",
+    "area": "北海道",
+    "place": "",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法",
+      "人権"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://satsuben.or.jp/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 43.4603175,
+    "lng": 143.3307158,
+    "dist_km_from_tokyo": 917.1,
+    "dist_km_from_yokohama": 944.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "3163ab7d4edd",
+    "title": "「ハンガリー事件を通じて離婚後の共同親権を考えるシンポジウム～来年５月に迫る　離婚後の共同親権制度の導入で離婚がどのように変わるのか～」",
+    "category": "学会・専門シンポジウム",
+    "date": "",
+    "time": "",
+    "org": "札幌弁護士会",
+    "area": "オンライン",
+    "place": "",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "家族法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://satsuben.or.jp/event/",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "cb5c71a2bde1",
+    "title": "シンポジウム「夫婦別姓も選べる社会へ『名前を変えたくない』は、ワガママですか？」",
+    "category": "学会・専門シンポジウム",
+    "date": "",
+    "time": "",
+    "org": "札幌弁護士会",
+    "area": "オンライン",
+    "place": "",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "家族法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://satsuben.or.jp/event/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "3c0c2d8dfe9a",
+    "title": "２０２６年７月　中小企業のための無料相談会＆ひまわりほっとダイヤル無料相談",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "仙台弁護士会",
+    "area": "宮城",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "企業法務"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://senben.org/archives/category/event",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.7598512,
+    "lng": 139.7549343,
+    "dist_km_from_tokyo": 8.8,
+    "dist_km_from_yokohama": 34.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "8ab393fc0bbb",
+    "title": "上映＆トークイベント　ある「加害者家族」の視点から死刑制度を考える",
+    "category": "公開講義・市民講座",
+    "date": "2026-08-22",
+    "time": "",
+    "org": "仙台弁護士会",
+    "area": "宮城",
+    "place": "",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "刑事法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://senben.org/archives/category/event",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.7598512,
+    "lng": 139.7549343,
+    "dist_km_from_tokyo": 8.8,
+    "dist_km_from_yokohama": 34.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "eb55849851dd",
+    "title": "令和８年度「憲法週間行事」",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "仙台弁護士会",
+    "area": "宮城",
+    "place": "",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "憲法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://senben.org/archives/category/event",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.7598512,
+    "lng": 139.7549343,
+    "dist_km_from_tokyo": 8.8,
+    "dist_km_from_yokohama": 34.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "02c6689b4d14",
+    "title": "２０２５年７月　中小企業のための無料相談会＆ひまわりほっとダイヤル無料相談",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "仙台弁護士会",
+    "area": "宮城",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "企業法務"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://senben.org/archives/category/event",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.7598512,
+    "lng": 139.7549343,
+    "dist_km_from_tokyo": 8.8,
+    "dist_km_from_yokohama": 34.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "2363629b45e3",
+    "title": "ジュニア・ロー・スクール仙台２０２５",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "仙台弁護士会",
+    "area": "宮城",
+    "place": "",
+    "fee": "",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "法教育"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://senben.org/archives/category/event",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.7598512,
+    "lng": 139.7549343,
+    "dist_km_from_tokyo": 8.8,
+    "dist_km_from_yokohama": 34.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "356b0abf0ff4",
+    "title": "２０２４年７月 中小企業のためのひまわりほっとダイヤル無料相談",
+    "category": "その他",
+    "date": "",
+    "time": "",
+    "org": "仙台弁護士会",
+    "area": "宮城",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "企業法務"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://senben.org/archives/category/event",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.7598512,
+    "lng": 139.7549343,
+    "dist_km_from_tokyo": 8.8,
+    "dist_km_from_yokohama": 34.8,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "15782af10a16",
+    "title": "日本弁護士連合会第68回人権擁護大会プレシンポジウム「広島から離れる女性」",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-08-22",
+    "time": "",
+    "org": "日本弁護士連合会",
+    "area": "広島",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "その他"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.hiroben.or.jp/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.3973947,
+    "lng": 132.4758369,
+    "dist_km_from_tokyo": 678.8,
+    "dist_km_from_yokohama": 662.1,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "1f7aa7f02d52",
+    "title": "死刑を考える日～もし冤罪で死刑になったら～",
+    "category": "公開講義・市民講座",
+    "date": "2026-10-24",
+    "time": "",
+    "org": "広島弁護士会",
+    "area": "広島",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "",
+    "fields": [
+      "刑事法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.hiroben.or.jp/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.3973947,
+    "lng": 132.4758369,
+    "dist_km_from_tokyo": 678.8,
+    "dist_km_from_yokohama": 662.1,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "7e482a32b855",
+    "title": "第33回「インバウンド時代の外為法———対内直接投資規制の実務ポイント」",
+    "category": "その他",
+    "date": "2026-08-19",
+    "time": "15:00〜15:30",
+    "org": "堂島法律事務所",
+    "area": "",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "金永志",
+    "fields": [
+      "外為法",
+      "国際取引法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.dojima.gr.jp/seminar/",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "dcf6034f1f90",
+    "title": "不動産・賃貸契約の法律知識とトラブル対策法",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "不動産法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "67c219ae1646",
+    "title": "契約書に記載する居住用賃貸契約の注意点とは?借地借家法とトラブル防止策",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "不動産法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "21bee44c54ed",
+    "title": "資産増額請求〜トラブルを防ぐ資産改定のルールと通知の書き方",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "不動産法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "123c0758b406",
+    "title": "駐車場契約のトラブル回避行?正しい契約書の作り方",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "不動産法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "26aad498d331",
+    "title": "不動産賃貸契約(貸主)失敗回避マニュアル",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "不動産法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "35410c193969",
+    "title": "不動産賃貸契約(借主)失敗回避マニュアル",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "不動産法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "c0ec2bbcfd1d",
+    "title": "不動産売買(売却)失敗回避マニュアル",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "不動産法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "0f9bc760b915",
+    "title": "不動産売買(購入)失敗回避マニュアル",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "不動産法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "c33d32f32d43",
+    "title": "不動産売買契約書の作り方",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "不動産法",
+      "契約書"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "af19f6a798e6",
+    "title": "「前編」実務対応早わかり(自社の取引は対象?)「改正法」の義務・禁止事項と実務対応",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "下請法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "59c5969d23f1",
+    "title": "「後編」実務対応早わかり(自社の取引は対象?)「改正法」の義務・禁止事項と実務対応",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "下請法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "01dfa753a5d6",
+    "title": "連鎖消費貸借契約書(借用書)の書き方とは?無効にならない注意点を徹底解説",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "契約書",
+      "民法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "acdc47527d40",
+    "title": "NDA(秘密保持契約書)の作り方",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "契約書"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "0d1b7661d46c",
+    "title": "契約書のリーガルチェック必須確認事項と注意点",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "契約書"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "75e1b6faf023",
+    "title": "取引基本契約書はこれを見よ〜小売・卸売・製造業〜",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "契約書",
+      "企業法務"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "6c252a147514",
+    "title": "業務委託の活用法と法的注意点〜企業間の業務委託〜",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "企業法務"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "6225729216f9",
+    "title": "まず何に取り組む?改正下請法(取引適正化法)ポイント解説",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "下請法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "c31d926c451a",
+    "title": "退職勧奨の実務(問題社員の実践対応・退職勧奨)",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "c9fa6e8730be",
+    "title": "問題社員対応の基礎〜法制度・退職勧奨",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "bd5731594f77",
+    "title": "法制度から退職勧奨まで、事例で学ぶ実践的解決",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "4d14e497f0bc",
+    "title": "配転命令・出向命令・懲戒解決を詳しく紹介",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "b448369bf56c",
+    "title": "弁護士が教える有期雇用と労働条件通知書の見直し方",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "dbc81681f74e",
+    "title": "企業が知るべき解雇無効の法的リスクと解雇無効の分かれ目",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "2622d2f61296",
+    "title": "社員が起こす就業規則・戦略的活用術",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "773fa7e923ff",
+    "title": "パワハラと言わせない!裁判で効力を持つ「指導記録」の作成的な書き方",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "a2a91f65b81f",
+    "title": "精神疾患の労災認定と会社の法的責任",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "b146c8217bae",
+    "title": "労災の損害賠償範囲と判例紹介・セミナー",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "2433cc2ff7f9",
+    "title": "「労災初動対応」重要な3つの場面",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "a79ecee4a9aa",
+    "title": "「ハラスメントの定義」アップデート",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "ab7cee0aa366",
+    "title": "「ハラスメント対応」実践マニュアル",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "6aa6fc614e80",
+    "title": "ハラスメント相談窓口の実務対応(セクハラ編)",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "49d889d27fe0",
+    "title": "パワハラから会社を守る方法",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "f679f8e9e69b",
+    "title": "SNSの著作権ルールとは?イラスト・写真使用の注意点を基礎から徹底解説",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "TMG法律事務所",
+    "area": "オンライン",
+    "place": "",
+    "fee": "無料",
+    "access": "可",
+    "speakers": "",
+    "fields": [
+      "知的財産法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://tmg-law.jp/seminar/index.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 35.6780551,
+    "lng": 139.7668527,
+    "dist_km_from_tokyo": 0.4,
+    "dist_km_from_yokohama": 27.0,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "c9b3fb42e439",
+    "title": "社労士向け「未払い残業代請求への対応実務」無料セミナー　※大阪会場",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "咲くやこの花法律事務所",
+    "area": "大阪",
+    "place": "",
+    "fee": "無料",
+    "access": "要問合せ",
+    "speakers": "西川暢春",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://sakuyakonohana-law.jp/roumu-seminar",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6937569,
+    "lng": 135.5014539,
+    "dist_km_from_tokyo": 402.9,
+    "dist_km_from_yokohama": 384.6,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "94067ced7b15",
+    "title": "働き方改革セミナー「働き方改革法案成立！企業側の対応の実務を徹底解説」 ※大阪会場",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "咲くやこの花法律事務所",
+    "area": "大阪",
+    "place": "",
+    "fee": "",
+    "access": "要問合せ",
+    "speakers": "西川暢春",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://sakuyakonohana-law.jp/roumu-seminar",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6937569,
+    "lng": 135.5014539,
+    "dist_km_from_tokyo": 402.9,
+    "dist_km_from_yokohama": 384.6,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "7688cfcbff47",
+    "title": "「問題社員に退職勧奨、退職勧告する場合の正しい手順、手続き」無料セミナー ※大阪会場",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "咲くやこの花法律事務所",
+    "area": "大阪",
+    "place": "",
+    "fee": "無料",
+    "access": "要問合せ",
+    "speakers": "西川暢春",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://sakuyakonohana-law.jp/roumu-seminar",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6937569,
+    "lng": 135.5014539,
+    "dist_km_from_tokyo": 402.9,
+    "dist_km_from_yokohama": 384.6,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "6917dfc0f8d5",
+    "title": "「問題社員に正しく対応し、正しく解雇する⽅法」無料セミナー ※大阪会場",
+    "category": "公開講義・市民講座",
+    "date": "",
+    "time": "",
+    "org": "咲くやこの花法律事務所",
+    "area": "大阪",
+    "place": "",
+    "fee": "無料",
+    "access": "要問合せ",
+    "speakers": "西川暢春",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://sakuyakonohana-law.jp/roumu-seminar",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6937569,
+    "lng": 135.5014539,
+    "dist_km_from_tokyo": 402.9,
+    "dist_km_from_yokohama": 384.6,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "84d40bb8953c",
+    "title": "サマークラーク",
+    "category": "就活・進路説明会",
+    "date": "",
+    "time": "10:00〜17:00（休憩1時間）",
+    "org": "三宅坂総合法律事務所",
+    "area": "東京",
+    "place": "三宅坂総合法律事務所（東京都千代田区平河町2-1-4 日比谷中央ビル6階）",
+    "fee": "無料（当日1万円支給、交通費等の実費は別途支給）",
+    "access": "不可",
+    "speakers": "",
+    "fields": [
+      "企業法務"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.miyakezaka.or.jp/careers/post_46.html",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "06413ca52371",
+    "title": "弁護士法人直法律事務所 サマークラーク募集（2025年度）",
+    "category": "就活・進路説明会",
+    "date": "",
+    "time": "10:00〜17:00",
+    "org": "弁護士法人直法律事務所",
+    "area": "東京",
+    "place": "〒102-0093 東京都千代田区平河町2-7-4 砂防会館別館 B棟5階",
+    "fee": "",
+    "access": "不可",
+    "speakers": "",
+    "fields": [
+      "企業法務",
+      "労働法",
+      "M&A",
+      "不動産法",
+      "相続・後見",
+      "保険法",
+      "広告法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://nao-lawoffice.jp/summerclerk/",
+    "application_status": "受付中",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "4ef05983e5d6",
+    "title": "日本刑法学会 学会大会（傍聴者制度・理事会）",
+    "category": "学会・専門シンポジウム",
+    "date": "",
+    "time": "",
+    "org": "日本刑法学会",
+    "area": "",
+    "place": "",
+    "fee": "傍聴代1500円（事前支払い）",
+    "access": "不可",
+    "speakers": "",
+    "fields": [
+      "刑法",
+      "刑事法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://clsj.jp/archives/14",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
+  },
+  {
+    "id": "c2f2c16be2cf",
+    "title": "第143回大会",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-10-24",
+    "time": "",
+    "org": "日本労働法学会",
+    "area": "",
+    "place": "南山大学名古屋キャンパス",
+    "fee": "",
+    "access": "不可",
+    "speakers": "",
+    "fields": [
+      "労働法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.rougaku.jp/",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": null,
+    "lng": null,
+    "dist_km_from_tokyo": null,
+    "dist_km_from_yokohama": null,
+    "added_at": "2026-08-09T13:16:19.213384+00:00"
   }
 ]
