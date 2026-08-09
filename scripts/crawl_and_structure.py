@@ -39,6 +39,8 @@ REJECTED_PATH = os.path.join(ROOT, "data", "rejected_sources.json")
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 MODEL = "claude-sonnet-5"
+# 判断力を要さない機械的なJSON整形だけを行うタスクは、安価なモデルに任せてコストを抑える
+MODEL_CHEAP = "claude-haiku-4-5-20251001"
 
 # 東京駅・横浜駅（行きやすさランキングの基準点）
 TOKYO_STA = (35.681236, 139.767125)
@@ -46,7 +48,7 @@ YOKOHAMA_STA = (35.465807, 139.622235)
 
 USER_AGENT = "legal-events-jp-bot/1.0 (+https://github.com/pigab12345/legal-events_JP; contact via GitHub issues)"
 
-EXTRACTION_PROMPT = """あなたは日本の法学系イベント情報を抽出する専門アシスタントです。
+EXTRACTION_INSTRUCTIONS = """あなたは日本の法学系イベント情報を抽出する専門アシスタントです。
 以下はあるWebページのテキストです。このページに含まれる法学関連イベントを可能な限り正確に抽出し、
 次のJSON配列だけを出力してください（説明文・コードフェンス禁止）。
 
@@ -82,12 +84,6 @@ EXTRACTION_PROMPT = """あなたは日本の法学系イベント情報を抽出
 - cancelled: 中止・延期の記載があれば true、なければ false
 - source: このページのURL
 - confidence: "公式確認済" 固定（このページ自体が主催者公式ページの場合）
-
-ページURL: {url}
-ページ本文:
----
-{text}
----
 """
 
 DISCOVERY_CATEGORIES = [
@@ -149,17 +145,16 @@ DISCOVERY_SEARCH_PROMPT = """あなたは日本の法学系オンラインイベ
 """
 
 DISCOVERY_FORMAT_PROMPT = """以下はリサーチャーが調査した「法学系イベント一覧ページ」の候補メモです。
-このメモに実際に登場するURLだけを使って、次のJSON配列だけを出力してください
-（説明文・コードフェンス・前置き・後書き一切禁止。出力の最初の文字は [ 、最後の文字は ] にしてください）。
+複数カテゴリ分のメモが含まれています。各メモに実際に登場するURLだけを使って、
+次のJSON配列だけを出力してください（説明文・コードフェンス・前置き・後書き一切禁止。
+出力の最初の文字は [ 、最後の文字は ] にしてください）。全カテゴリ分を1つの配列にまとめてください。
 
 メモに具体的なURLが1件も含まれていない場合は、空配列 [] だけを出力してください。
-URLを推測や創作で補ってはいけません。
+URLを推測や創作で補ってはいけません。各要素にはどのカテゴリ由来かも記録してください。
 
-[{{"name": "サイト名", "url": "https://...", "reason": "根拠"}}]
+[{{"name": "サイト名", "url": "https://...", "reason": "根拠", "category_label": "メモの【カテゴリ】名"}}]
 
---- メモ ---
-{notes}
---- ここまで ---
+{notes_by_category}
 """
 
 
@@ -183,13 +178,27 @@ def extract_json_array(raw: str):
         return None
 
 
-def call_claude(prompt: str, tools=None, max_tokens=2000) -> str:
+def call_claude(prompt: str, tools=None, max_tokens=2000, model=None, cache_static: str = None) -> str:
     if not ANTHROPIC_API_KEY:
         raise RuntimeError("ANTHROPIC_API_KEY が設定されていません")
+
+    if cache_static:
+        # 静的な指示文をキャッシュ対象としてマークし、同じ指示を繰り返し送る際の課金を抑える
+        # （最小キャッシュサイズ未満の場合は単に無視されるだけで、動作・結果には影響しない）
+        content = [
+            {"type": "text", "text": cache_static, "cache_control": {"type": "ephemeral"}},
+            {"type": "text", "text": prompt},
+        ]
+    else:
+        content = prompt
+
     payload = {
-        "model": MODEL,
+        "model": model or MODEL,
         "max_tokens": max_tokens,
-        "messages": [{"role": "user", "content": prompt}],
+        # 構造化JSON出力のみが目的で、可視の推論過程は不要なためAdaptive Thinkingを無効化し、
+        # 出力トークン（課金対象）に無駄な推論分が乗らないようにする
+        "thinking": {"type": "disabled"},
+        "messages": [{"role": "user", "content": content}],
     }
     if tools:
         payload["tools"] = tools
@@ -215,29 +224,33 @@ def call_claude(prompt: str, tools=None, max_tokens=2000) -> str:
         raise RuntimeError(f"HTTP {e.code}: {detail}") from None
     blocks = data.get("content", [])
     search_calls = sum(1 for b in blocks if b.get("type") == "server_tool_use")
+    usage = data.get("usage", {})
+    cache_read = usage.get("cache_read_input_tokens", 0)
+    if tools:
+        print(f"[INFO] web_search呼び出し回数: {search_calls}", file=sys.stderr)
+    if cache_read:
+        print(f"[INFO] キャッシュヒット: {cache_read}トークン分を割引価格で処理", file=sys.stderr)
     if tools:
         print(f"[INFO] web_search呼び出し回数: {search_calls}", file=sys.stderr)
     return "".join(b.get("text", "") for b in blocks if b.get("type") == "text").strip()
 
 
 def discover_new_sources(existing_sources: list, rejected: list, max_per_run: int = 25) -> list:
-    """既存sources.jsonと重複しない新規サイトをカテゴリ別にweb検索で発見する（検索→整形の2段階×カテゴリ数）"""
+    """既存sources.jsonと重複しない新規サイトをカテゴリ別にweb検索で発見する
+    （検索フェーズはカテゴリごと・整形フェーズは全カテゴリまとめて1回・安価モデルで実行してコストを抑える）
+    """
     known = {normalize_url(s["url"]) for s in existing_sources}
     known |= {normalize_url(u) for u in rejected}
 
-    all_new_sources = []
+    existing_urls = "\n".join(f"- {s['url']}" for s in existing_sources) or "(なし)"
+    rejected_urls = "\n".join(f"- {u}" for u in rejected) or "(なし)"
 
+    notes_by_category = []
     for cat in DISCOVERY_CATEGORIES:
-        if len(all_new_sources) >= max_per_run:
-            break
-
-        existing_urls = "\n".join(f"- {s['url']}" for s in existing_sources) or "(なし)"
-        rejected_urls = "\n".join(f"- {u}" for u in rejected) or "(なし)"
         search_prompt = DISCOVERY_SEARCH_PROMPT.format(
             label=cat["label"], queries=cat["queries"], targets=cat["targets"],
             existing_urls=existing_urls, rejected_urls=rejected_urls,
         )
-
         print(f"[INFO] サイト探索カテゴリ: {cat['label']}", file=sys.stderr)
         try:
             notes = call_claude(
@@ -253,31 +266,43 @@ def discover_new_sources(existing_sources: list, rejected: list, max_per_run: in
             print(f"[WARN] 検索フェーズの出力が空でした（{cat['label']}）", file=sys.stderr)
             continue
         print(f"[DEBUG] {cat['label']}の検索結果(先頭300字): {notes[:300]}", file=sys.stderr)
+        notes_by_category.append(f"【カテゴリ: {cat['label']}】\n{notes}")
 
-        try:
-            raw = call_claude(DISCOVERY_FORMAT_PROMPT.format(notes=notes), max_tokens=1500)
-        except Exception as e:
-            print(f"[WARN] サイト探索(整形フェーズ/{cat['label']})に失敗: {e}", file=sys.stderr)
+    if not notes_by_category:
+        return []
+
+    # --- 整形フェーズは全カテゴリまとめて1回だけ・安価モデルで実行 ---
+    combined_notes = "\n\n---\n\n".join(notes_by_category)
+    try:
+        raw = call_claude(
+            DISCOVERY_FORMAT_PROMPT.format(notes_by_category=combined_notes),
+            max_tokens=3000,
+            model=MODEL_CHEAP,
+        )
+    except Exception as e:
+        print(f"[WARN] サイト探索(整形フェーズ)に失敗: {e}", file=sys.stderr)
+        return []
+
+    found = extract_json_array(raw)
+    if not found:
+        return []
+
+    all_new_sources = []
+    for f in found:
+        url = f.get("url", "").strip()
+        if not url or normalize_url(url) in known:
             continue
-
-        found = extract_json_array(raw)
-        if not found:
-            continue
-
-        for f in found:
-            url = f.get("url", "").strip()
-            if not url or normalize_url(url) in known:
-                continue
-            known.add(normalize_url(url))
-            all_new_sources.append({
-                "name": f.get("name", url),
-                "url": url,
-                "note": f"[{cat['label']}] " + f.get("reason", "自動発見"),
-                "auto_discovered": True,
-                "discovered_at": datetime.now(timezone.utc).isoformat(),
-            })
-            if len(all_new_sources) >= max_per_run:
-                break
+        known.add(normalize_url(url))
+        label = f.get("category_label", "")
+        all_new_sources.append({
+            "name": f.get("name", url),
+            "url": url,
+            "note": (f"[{label}] " if label else "") + f.get("reason", "自動発見"),
+            "auto_discovered": True,
+            "discovered_at": datetime.now(timezone.utc).isoformat(),
+        })
+        if len(all_new_sources) >= max_per_run:
+            break
 
     return all_new_sources
 
@@ -295,9 +320,9 @@ def fetch_text(url: str) -> str:
 
 
 def extract_events_from_page(url: str, text: str) -> list:
-    prompt = EXTRACTION_PROMPT.format(url=url, text=text)
+    dynamic_part = f"ページURL: {url}\nページ本文:\n---\n{text}\n---"
     try:
-        raw = call_claude(prompt, max_tokens=4000)
+        raw = call_claude(dynamic_part, max_tokens=4000, cache_static=EXTRACTION_INSTRUCTIONS)
     except Exception as e:
         print(f"[WARN] AI構造化に失敗しました {url}: {e}", file=sys.stderr)
         return []
