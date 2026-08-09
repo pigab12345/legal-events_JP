@@ -166,14 +166,52 @@ def normalize_url(u: str) -> str:
 
 
 def extract_json_array(raw: str):
-    """前置き・後書きが混ざっていても最初の[〜最後の]を取り出してJSON化する"""
+    """前置き・後書きが混ざっていても最初の[〜最後の]を取り出してJSON化する。
+    max_tokens到達等で配列が閉じる前に切れた場合も、完成している要素だけを救出する。"""
     raw = raw.strip()
     raw = re.sub(r"^```json|```$", "", raw, flags=re.MULTILINE).strip()
-    start, end = raw.find("["), raw.rfind("]")
-    if start == -1 or end == -1 or end < start:
+    start = raw.find("[")
+    if start == -1:
         return None
+
+    end = raw.rfind("]")
+    if end != -1 and end > start:
+        try:
+            return json.loads(raw[start:end + 1])
+        except json.JSONDecodeError:
+            pass  # 配列全体としては壊れている → 下の救出処理へ
+
+    # --- 救出処理: 文字列・エスケープを考慮しつつ、波括弧の深さを追って
+    #     「最後に完全に閉じたオブジェクト」の直後で配列を打ち切って再パースする ---
+    body = raw[start + 1:]
+    depth = 0
+    in_string = False
+    escape = False
+    last_complete_end = None
+    for i, ch in enumerate(body):
+        if escape:
+            escape = False
+            continue
+        if ch == "\\":
+            escape = True
+            continue
+        if ch == '"':
+            in_string = not in_string
+            continue
+        if in_string:
+            continue
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                last_complete_end = i
+
+    if last_complete_end is None:
+        return None
+    repaired = "[" + body[:last_complete_end + 1] + "]"
     try:
-        return json.loads(raw[start:end + 1])
+        return json.loads(repaired)
     except json.JSONDecodeError:
         return None
 
@@ -322,14 +360,16 @@ def fetch_text(url: str) -> str:
 def extract_events_from_page(url: str, text: str) -> list:
     dynamic_part = f"ページURL: {url}\nページ本文:\n---\n{text}\n---"
     try:
-        raw = call_claude(dynamic_part, max_tokens=4000, cache_static=EXTRACTION_INSTRUCTIONS)
+        raw = call_claude(dynamic_part, max_tokens=8000, cache_static=EXTRACTION_INSTRUCTIONS)
     except Exception as e:
         print(f"[WARN] AI構造化に失敗しました {url}: {e}", file=sys.stderr)
         return []
     found = extract_json_array(raw)
     if found is None:
-        print(f"[WARN] JSON解析失敗: {url}\n{raw[:500]}", file=sys.stderr)
+        print(f"[WARN] JSON解析失敗（救出不可）: {url}\n{raw[:500]}", file=sys.stderr)
         return []
+    if not raw.rstrip().endswith("]"):
+        print(f"[INFO] {url}: 出力が途中で切れましたが、完成していた{len(found)}件のイベントを救出しました", file=sys.stderr)
     return found if isinstance(found, list) else []
 
 
