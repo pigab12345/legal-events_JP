@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
 """
-法学イベント自動巡回・AI構造化スクリプト
+法学イベント自動巡回・AI構造化・自動登録スクリプト
 
 やること:
   1. data/sources.json の各サイトを巡回してテキストを取得
   2. Claude API に投げてイベント候補をJSON構造化
      (一般参加可否・申込状況・中止/日程変更の判定も同時に行う)
-  3. 既存の data/events.json / data/candidates.json と突合して差分検出
-     - 新規イベント
-     - 日程変更
-     - 中止
-     - 申込開始
-  4. 結果を data/candidates.json に書き出す（events.json は直接編集しない＝人間確認を必ず挟む）
-  5. 会場をジオコーディングして東京駅/横浜駅からの距離を付与（行きやすさランキング用）
+  3. 開催日が既に過去のイベントはこの時点で除外する
+  4. 既存の data/events.json と突合し、新規／日程変更／中止／申込開始を検出
+  5. 結果を data/events.json に直接反映する（自動登録。人間の確認ステップは無し）
+     ※ data/candidates.json には今回の抽出結果の記録（監査ログ）として残す
+  6. 会場をジオコーディングして東京駅/横浜駅からの距離を付与（行きやすさランキング用）
 
 必要な環境変数:
   ANTHROPIC_API_KEY  ... 必須
@@ -24,10 +22,12 @@ import json
 import time
 import hashlib
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 import requests
 from bs4 import BeautifulSoup
+
+JST = timezone(timedelta(hours=9))
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCES_PATH = os.path.join(ROOT, "data", "sources.json")
@@ -247,6 +247,25 @@ def make_id(ev: dict) -> str:
     return hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
 
 
+def is_past_date(date_str: str) -> bool:
+    """開催日が今日(JST)より前ならTrue。日付不明("")の場合はFalse扱い（除外しない）"""
+    if not date_str:
+        return False
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d").date()
+    except ValueError:
+        return False
+    return d < datetime.now(JST).date()
+
+
+EVENT_FIELDS = [
+    "id", "title", "date", "time", "org", "area", "place", "fee",
+    "access", "speakers", "fields", "confidence", "source",
+    "application_status", "cancelled", "lat", "lng",
+    "dist_km_from_tokyo", "dist_km_from_yokohama",
+]
+
+
 def load_json(path, default):
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
@@ -295,17 +314,16 @@ def geocode(place: str, area: str, cache: dict):
 def main():
     sources = load_json(SOURCES_PATH, [])
     events = load_json(EVENTS_PATH, [])
-    candidates = load_json(CANDIDATES_PATH, [])
     geocache = load_json(GEOCACHE_PATH, {})
     rejected = load_json(REJECTED_PATH, [])
 
     events_by_id = {make_id(e): e for e in events}
-    candidates_by_id = {c["id"]: c for c in candidates}
+    candidates_log = []  # 監査ログ用（今回抽出した生データを記録するだけ。登録には使わない）
 
     now = datetime.now(timezone.utc).isoformat()
     report = {
         "discovered": [], "new": [], "date_changed": [],
-        "cancelled": [], "application_open": [],
+        "cancelled": [], "application_open": [], "skipped_past": 0,
     }
 
     # --- 1. 新規サイトの自動発見 ---
@@ -336,55 +354,67 @@ def main():
             continue
 
         for ev in extracted:
+            # --- 開催日が既に過去のものはこの時点でリストアップしない ---
+            if is_past_date(ev.get("date", "")):
+                report["skipped_past"] += 1
+                continue
+
             eid = make_id(ev)
             lat, lng = geocode(ev.get("place", ""), ev.get("area", ""), geocache)
             dist_tokyo = haversine_km(TOKYO_STA, (lat, lng)) if lat else None
             dist_yokohama = haversine_km(YOKOHAMA_STA, (lat, lng)) if lat else None
 
-            candidate = {
+            record = {
                 "id": eid,
-                "checked_at": now,
                 "lat": lat,
                 "lng": lng,
                 "dist_km_from_tokyo": round(dist_tokyo, 1) if dist_tokyo is not None else None,
                 "dist_km_from_yokohama": round(dist_yokohama, 1) if dist_yokohama is not None else None,
                 **ev,
             }
+            candidates_log.append({"checked_at": now, **record})
 
             old_event = events_by_id.get(eid)
-            old_candidate = candidates_by_id.get(eid)
 
-            tags = []
-            if not old_event and not old_candidate:
-                tags.append("new")
-                report["new"].append(candidate["title"])
+            if not old_event:
+                report["new"].append(record["title"])
             if old_event and old_event.get("date") and ev.get("date") and old_event["date"] != ev["date"]:
-                tags.append("date_changed")
-                candidate["previous_date"] = old_event["date"]
-                report["date_changed"].append(candidate["title"])
+                report["date_changed"].append(record["title"])
             if ev.get("cancelled") and not (old_event or {}).get("cancelled"):
-                tags.append("cancelled")
-                report["cancelled"].append(candidate["title"])
-            prev_status = (old_event or old_candidate or {}).get("application_status")
+                report["cancelled"].append(record["title"])
+            prev_status = (old_event or {}).get("application_status")
             if ev.get("application_status") == "受付中" and prev_status in ("未開始", None, ""):
-                tags.append("application_open")
-                report["application_open"].append(candidate["title"])
+                report["application_open"].append(record["title"])
 
-            candidate["review_tags"] = tags
-            candidates_by_id[eid] = candidate
+            # --- events.json へ直接自動登録（人間確認なし） ---
+            events_by_id[eid] = {k: record.get(k) for k in EVENT_FIELDS if k in record}
 
-    save_json(CANDIDATES_PATH, list(candidates_by_id.values()))
+    # 既存イベントも含め、開催日が過去になったものはサイトから自動的に間引く
+    before_count = len(events_by_id)
+    events_by_id = {
+        eid: e for eid, e in events_by_id.items() if not is_past_date(e.get("date", ""))
+    }
+    pruned = before_count - len(events_by_id)
+    if pruned:
+        print(f"[INFO] 開催日が過去になった既存イベント {pruned}件をevents.jsonから削除しました")
+
+    save_json(EVENTS_PATH, list(events_by_id.values()))
+    save_json(CANDIDATES_PATH, candidates_log)
     save_json(GEOCACHE_PATH, geocache)
 
     summary_lines = []
     for key, label in [
-        ("discovered", "🔎 新規発見サイト"), ("new", "🆕 新規候補"),
+        ("discovered", "🔎 新規発見サイト"), ("new", "🆕 新規登録"),
         ("date_changed", "📅 日程変更"), ("cancelled", "🚫 中止"),
         ("application_open", "📝 申込開始"),
     ]:
         if report[key]:
             summary_lines.append(f"### {label} ({len(report[key])}件)")
             summary_lines.extend(f"- {t}" for t in report[key])
+    if report["skipped_past"]:
+        summary_lines.append(f"\n開催日が既に過ぎていたため {report['skipped_past']}件を除外しました。")
+    if pruned:
+        summary_lines.append(f"開催日超過につき既存イベント {pruned}件を自動削除しました。")
     summary = "\n".join(summary_lines) if summary_lines else "変化はありませんでした。"
 
     with open(os.path.join(ROOT, "run_summary.md"), "w", encoding="utf-8") as f:
