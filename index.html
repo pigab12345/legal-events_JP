@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17324d"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<title>法学イベント</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#17202a;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+header{background:#17324d;color:white;padding:17px 15px;position:sticky;top:0;z-index:10}.wrap{max-width:900px;margin:auto}h1{margin:0;font-size:21px}.sub{font-size:11px;opacity:.8;margin-top:3px}
+main{padding:12px}.notice{background:#fff8df;border:1px solid #ead58c;border-radius:10px;padding:10px;font-size:11px;line-height:1.6;margin-bottom:10px}
+.controls{display:grid;grid-template-columns:1fr 110px 110px 130px;gap:7px}input,select,button{font:inherit;border:1px solid #dfe3e8;border-radius:10px;background:white;padding:10px}.chips{display:flex;gap:6px;overflow:auto;padding:9px 0}.chip{white-space:nowrap;padding:7px 10px;border-radius:20px}.on{background:#17324d;color:#fff}.count{font-size:12px;color:#667085;margin:2px}
+.card{background:white;border:1px solid #e1e5ea;border-radius:13px;padding:14px;margin:9px 0;position:relative}.date{font-size:13px;font-weight:700;color:#17324d}.title{font-size:17px;font-weight:750;margin:4px 0 8px}.meta{font-size:12px;line-height:1.8;color:#46505b}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.tag{font-size:10px;background:#edf3f7;border-radius:5px;padding:3px 6px}.source{display:inline-block;margin-top:9px;border:1px solid #dfe3e8;border-radius:8px;padding:6px 8px;text-decoration:none;color:#17324d;font-size:11px}
+.badges{position:absolute;top:12px;right:12px;display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;max-width:45%}
+.badge{font-size:10px;font-weight:700;border-radius:6px;padding:3px 7px;color:#fff}
+.badge.cancelled{background:#d64545}.badge.dateChanged{background:#e08a1e}.badge.applicationOpen{background:#1e8e4c}.badge.dist{background:#eef2f6;color:#334}
+@media(max-width:650px){.controls{grid-template-columns:1fr 1fr}.controls input{grid-column:1/-1}}
+</style></head>
+<body><header><div class="wrap"><h1>⚖️ 法学イベント</h1><div class="sub">公開シンポジウム・学会・講演会／公式情報優先</div></div></header>
+<main class="wrap"><div class="notice">「公式確認済」は主催者公式ページで開催情報を確認したもの。「要確認」は参加費・非会員条件などが未確定の項目です。申込前に必ず公式ページを確認してください。距離は直線距離の目安であり、実際の所要時間ではありません。</div>
+
+<div class="controls">
+  <input id="q" placeholder="検索：民法、AI、大学名、登壇者など">
+  <select id="month"><option value="">月</option><option value="2026-08">8月</option><option value="2026-09">9月</option><option value="2026-10">10月</option><option value="2026-11">11月</option><option value="2026-12">12月</option></select>
+  <select id="area"><option value="">場所</option><option>東京</option><option>神奈川</option><option>オンライン</option><option>京都</option><option>北海道</option></select>
+  <select id="sort">
+    <option value="date">開催日順</option>
+    <option value="dist_tokyo">東京駅から近い順</option>
+    <option value="dist_yokohama">横浜駅から近い順</option>
+  </select>
+</div>
+
+<div class="chips"><button class="chip on" data-f="">すべて</button><button class="chip" data-f="一般参加">一般参加</button><button class="chip" data-f="無料">無料</button><button class="chip" data-f="民法">民法</button><button class="chip" data-f="刑法">刑法</button><button class="chip" data-f="AI・法">AI・法</button><button class="chip" data-f="司法制度">司法制度</button></div>
+
+<div id="count" class="count"></div><div id="list"></div></main>
+<script>
+let data=[],filter="";
+
+async function load(){try{data=await fetch("data/events.json?"+Date.now()).then(r=>r.json())}catch(e){data=[]}render()}
+
+function badgesFor(e){
+  let b=[];
+  if(e.cancelled) b.push(`<span class="badge cancelled">中止・延期</span>`);
+  if(e.review_tags&&e.review_tags.includes("date_changed")) b.push(`<span class="badge dateChanged">日程変更</span>`);
+  if(e.application_status==="受付中") b.push(`<span class="badge applicationOpen">申込受付中</span>`);
+  let d=sortKey==="dist_yokohama"?e.dist_km_from_yokohama:e.dist_km_from_tokyo;
+  if(typeof d==="number"){
+    let label=sortKey==="dist_yokohama"?"横浜駅":"東京駅";
+    b.push(`<span class="badge dist">🚉 ${label}から約${d}km</span>`);
+  }else if(e.area&&e.area.includes("オンライン")){
+    b.push(`<span class="badge dist">🌐 オンライン</span>`);
+  }
+  return b.join("");
+}
+
+let sortKey="date";
+
+function render(){
+  let q=document.querySelector("#q").value.toLowerCase(),m=document.querySelector("#month").value,a=document.querySelector("#area").value;
+  sortKey=document.querySelector("#sort").value;
+
+  let x=data.filter(e=>(!q||JSON.stringify(e).toLowerCase().includes(q))&&(!m||e.date.startsWith(m))&&(!a||e.area.includes(a))&&(!filter||e.fields.includes(filter)||e.access.includes(filter)||e.fee.includes(filter)));
+
+  if(sortKey==="date"){
+    x.sort((p,q2)=>(p.date||"9999").localeCompare(q2.date||"9999"));
+  }else{
+    const key=sortKey==="dist_yokohama"?"dist_km_from_yokohama":"dist_km_from_tokyo";
+    x.sort((p,q2)=>{
+      const pd=typeof p[key]==="number"?p[key]:Infinity;
+      const qd=typeof q2[key]==="number"?q2[key]:Infinity;
+      // オンラインは常に最上位（移動不要）
+      const pOnline=p.area&&p.area.includes("オンライン")?-1:0;
+      const qOnline=q2.area&&q2.area.includes("オンライン")?-1:0;
+      if(pOnline!==qOnline) return pOnline-qOnline;
+      return pd-qd;
+    });
+  }
+
+  document.querySelector("#count").textContent=x.length+"件";
+  document.querySelector("#list").innerHTML=x.map(e=>`<article class="card"><div class="badges">${badgesFor(e)}</div><div class="date">${new Date(e.date+"T00:00:00").toLocaleDateString("ja-JP",{year:"numeric",month:"long",day:"numeric",weekday:"short"})}${e.time?" "+e.time:""}</div><div class="title">${e.title}</div><div class="meta"><b>主催：</b>${e.org}<br><b>場所：</b>${e.area}・${e.place}<br><b>費用：</b>${e.fee}<br><b>参加：</b>${e.access}<br><b>登壇者：</b>${e.speakers}<br><b>申込状況：</b>${e.application_status||"不明"}<br><b>確認：</b>${e.confidence}</div><div class="tags">${e.fields.map(t=>`<span class="tag">${t}</span>`).join("")}</div><a class="source" href="${e.source}" target="_blank" rel="noopener">公式情報 ↗</a></article>`).join("")||"<div class='card'>該当するイベントはありません。</div>"
+}
+
+["q","month","area","sort"].forEach(id=>document.querySelector("#"+id).addEventListener("input",render));
+document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");filter=b.dataset.f;render()});
+load();
+</script></body></html>
