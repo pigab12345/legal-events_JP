@@ -2,7 +2,7 @@ name: 法学イベント巡回・AI構造化・自動更新
 
 on:
   schedule:
-    - cron: "0 21 * * *"  # 毎日 UTC21:00 = JST 06:00
+    - cron: "0 21 1,15 * *"  # 毎月1日・15日 UTC21:00 = JST 06:00（約2週に1回）
   workflow_dispatch: {}
 
 permissions:
