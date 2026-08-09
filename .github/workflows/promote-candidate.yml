@@ -1,0 +1,54 @@
+name: 候補をevents.jsonへ反映
+
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_id:
+        description: "候補ID（候補一覧はActionsのログ、またはcandidates.jsonで確認）"
+        required: true
+      action:
+        description: "処理内容"
+        required: true
+        default: "promote"
+        type: choice
+        options:
+          - promote
+          - remove
+      confidence:
+        description: "確認区分（promote時のみ）"
+        required: false
+        default: "公式確認済"
+        type: choice
+        options:
+          - 公式確認済
+          - 要確認
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 反映処理を実行
+        run: |
+          if [ "${{ github.event.inputs.action }}" = "remove" ]; then
+            python scripts/promote_candidate.py --remove "${{ github.event.inputs.candidate_id }}"
+          else
+            python scripts/promote_candidate.py "${{ github.event.inputs.candidate_id }}" --confidence "${{ github.event.inputs.confidence }}"
+          fi
+
+      - name: events.json をコミット
+        run: |
+          git config user.name "legal-events-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/events.json
+          git diff --cached --quiet && echo "変更なし" && exit 0
+          git commit -m "🤖 候補 ${{ github.event.inputs.candidate_id }} を反映 (${{ github.event.inputs.action }})"
+          git push

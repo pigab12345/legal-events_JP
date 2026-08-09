@@ -20,16 +20,20 @@ Settings → Secrets and variables → Actions で以下を追加:
 4. `data/candidates.json` を更新し、変化があれば自動でPRを作成（**events.jsonは自動更新されません**＝誤情報防止のため必ず人間確認を挟む設計を維持）
 5. PRがGitHub通知として届く（＋Discord Webhook設定時はそちらにも通知）
 
-## 4. 候補を本番反映する
-PRの `data/candidates.json` を確認し、問題なければ:
+## 4. 候補を本番反映する（スマホだけでOK・Python不要）
+
+1. PRで追加された `data/candidates.json` をGitHub上で開き、内容と `id` を確認する
+2. リポジトリの `Actions` タブ → 「候補をevents.jsonへ反映」を選択 → `Run workflow`
+3. `candidate_id` に確認した id を入力、`action` は `promote`（採用）か `remove`（削除・中止イベント除去）を選択
+4. 実行すると自動で `data/events.json` が更新されてpushされ、PWAに反映される
+
+ローカルでPythonを動かしたい場合（PC環境がある場合のみ）は、以下も使えます:
 
 ```bash
 python scripts/promote_candidate.py --list          # 候補一覧とタグ確認
 python scripts/promote_candidate.py <candidate_id>  # events.json へ反映
 python scripts/promote_candidate.py --remove <id>   # 中止イベントを削除する場合
 ```
-
-反映後、通常どおり `events.json` をpushすればPWAに反映されます。
 
 ## 5. 「行きやすさランキング」について
 - クロール時に会場を無料のジオコーディングAPI（Nominatim）で緯度経度化し、東京駅・横浜駅からの直線距離を算出します。
