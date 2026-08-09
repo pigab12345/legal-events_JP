@@ -1,0 +1,60 @@
+name: 法学イベント巡回・AI構造化
+
+on:
+  schedule:
+    - cron: "0 21 * * *"  # 毎日 UTC21:00 = JST 06:00
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 依存関係インストール
+        run: pip install -r scripts/requirements.txt
+
+      - name: 巡回・AI構造化・差分検出を実行
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/crawl_and_structure.py
+
+      - name: 変更有無を確認
+        id: diff
+        run: |
+          if git diff --quiet -- data/candidates.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 候補PRを作成
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "🤖 イベント候補を更新"
+          branch: bot/candidates-update
+          title: "🤖 新着イベント候補あり"
+          body-path: run_summary.md
+          add-paths: |
+            data/candidates.json
+            data/geocache.json
+            data/sources.json
+
+      - name: Discord通知（任意・secrets.DISCORD_WEBHOOK_URL設定時のみ）
+        if: steps.diff.outputs.changed == 'true' && env.DISCORD_WEBHOOK_URL != ''
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          SUMMARY=$(cat run_summary.md | head -c 1800)
+          curl -sf -H "Content-Type: application/json" \
+            -d "$(jq -n --arg content "法学イベント: 新着候補が届きました\n\n$SUMMARY" '{content:$content}')" \
+            "$DISCORD_WEBHOOK_URL"
