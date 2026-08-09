@@ -7,14 +7,14 @@
 header{background:#17324d;color:white;padding:17px 15px;position:sticky;top:0;z-index:10}.wrap{max-width:900px;margin:auto}h1{margin:0;font-size:21px}.sub{font-size:11px;opacity:.8;margin-top:3px}
 main{padding:12px}.notice{background:#fff8df;border:1px solid #ead58c;border-radius:10px;padding:10px;font-size:11px;line-height:1.6;margin-bottom:10px}
 .controls{display:grid;grid-template-columns:1fr 100px 90px 130px 130px;gap:7px}input,select,button{font:inherit;border:1px solid #dfe3e8;border-radius:10px;background:white;padding:10px}.chips{display:flex;gap:6px;overflow:auto;padding:9px 0}.chip{white-space:nowrap;padding:7px 10px;border-radius:20px}.on{background:#17324d;color:#fff}.count{font-size:12px;color:#667085;margin:2px}
-.card{background:white;border:1px solid #e1e5ea;border-radius:13px;padding:14px;margin:9px 0;position:relative}.date{font-size:13px;font-weight:700;color:#17324d}.title{font-size:17px;font-weight:750;margin:4px 0 8px}.meta{font-size:12px;line-height:1.8;color:#46505b}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.tag{font-size:10px;background:#edf3f7;border-radius:5px;padding:3px 6px}.source{display:inline-block;margin-top:9px;border:1px solid #dfe3e8;border-radius:8px;padding:6px 8px;text-decoration:none;color:#17324d;font-size:11px}
-.badges{position:absolute;top:12px;right:12px;display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;max-width:45%}
+.card{background:white;border:1px solid #e1e5ea;border-radius:13px;padding:14px;margin:9px 0}.date{font-size:13px;font-weight:700;color:#17324d}.title{font-size:17px;font-weight:750;margin:4px 0 8px}.meta{font-size:12px;line-height:1.8;color:#46505b}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.tag{font-size:10px;background:#edf3f7;border-radius:5px;padding:3px 6px}.source{display:inline-block;margin-top:9px;border:1px solid #dfe3e8;border-radius:8px;padding:6px 8px;text-decoration:none;color:#17324d;font-size:11px}
+.badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
 .badge{font-size:10px;font-weight:700;border-radius:6px;padding:3px 7px;color:#fff}
-.badge.cancelled{background:#d64545}.badge.dateChanged{background:#e08a1e}.badge.applicationOpen{background:#1e8e4c}.badge.dist{background:#eef2f6;color:#334}.badge.restricted{background:#6b7280}
+.badge.cancelled{background:#d64545}.badge.dateChanged{background:#e08a1e}.badge.applicationOpen{background:#1e8e4c}.badge.restricted{background:#6b7280}.badge.new{background:#2563eb}
 @media(max-width:650px){.controls{grid-template-columns:1fr 1fr 1fr}.controls input{grid-column:1/-1}}
 </style></head>
 <body><header><div class="wrap"><h1>⚖️ 法学イベント</h1><div class="sub">学会・公開講義・受験生ガイダンス・就活説明会／公式情報優先</div></div></header>
-<main class="wrap"><div class="notice">「公式確認済」は主催者公式ページで開催情報を確認したもの。「要確認」は参加費・非会員条件などが未確定の項目です。会員限定・学内限定・修習生限定などで一般の方が参加できないイベントも情報として掲載しています（「参加不可」バッジ表示）。申込前に必ず公式ページを確認してください。距離は直線距離の目安であり、実際の所要時間ではありません。</div>
+<main class="wrap"><div class="notice">「公式確認済」は主催者公式ページで開催情報を確認したもの。「要確認」は参加費・非会員条件などが未確定の項目です。会員限定・学内限定・修習生限定などで一般の方が参加できないイベントも情報として掲載しています（「参加不可」バッジ表示）。申込前に必ず公式ページを確認してください。</div>
 
 <div class="controls">
   <input id="q" placeholder="検索：民法、AI、大学名、登壇者など">
@@ -23,6 +23,7 @@ main{padding:12px}.notice{background:#fff8df;border:1px solid #ead58c;border-rad
   <select id="category"><option value="">種類</option><option value="学会・専門シンポジウム">学会・専門シンポジウム</option><option value="公開講義・市民講座">公開講義・市民講座</option><option value="受験生向けガイダンス">受験生向けガイダンス</option><option value="就活・進路説明会">就活・進路説明会</option><option value="その他">その他</option></select>
   <select id="sort">
     <option value="date">開催日順</option>
+    <option value="added">新着順（リストアップ日）</option>
     <option value="dist_tokyo">東京駅から近い順</option>
     <option value="dist_yokohama">横浜駅から近い順</option>
   </select>
@@ -39,19 +40,19 @@ async function load(){try{data=await fetch("data/events.json?"+Date.now()).then(
 
 function badgesFor(e){
   let b=[];
+  if(isNew(e)) b.push(`<span class="badge new">🆕 新着</span>`);
   if(e.cancelled) b.push(`<span class="badge cancelled">中止・延期</span>`);
   if(e.access==="不可") b.push(`<span class="badge restricted">参加不可（会員等限定）</span>`);
   if(e.access==="要問合せ") b.push(`<span class="badge restricted">参加可否要問合せ</span>`);
   if(e.review_tags&&e.review_tags.includes("date_changed")) b.push(`<span class="badge dateChanged">日程変更</span>`);
   if(e.application_status==="受付中") b.push(`<span class="badge applicationOpen">申込受付中</span>`);
-  let d=sortKey==="dist_yokohama"?e.dist_km_from_yokohama:e.dist_km_from_tokyo;
-  if(typeof d==="number"){
-    let label=sortKey==="dist_yokohama"?"横浜駅":"東京駅";
-    b.push(`<span class="badge dist">🚉 ${label}から約${d}km</span>`);
-  }else if(e.area&&e.area.includes("オンライン")){
-    b.push(`<span class="badge dist">🌐 オンライン</span>`);
-  }
   return b.join("");
+}
+
+function isNew(e){
+  if(!e.added_at) return false;
+  const days=(Date.now()-new Date(e.added_at).getTime())/86400000;
+  return days>=0 && days<=16; // 直近の巡回サイクル（約2週間）以内に追加されたもの
 }
 
 let sortKey="date";
@@ -64,6 +65,8 @@ function render(){
 
   if(sortKey==="date"){
     x.sort((p,q2)=>(p.date||"9999").localeCompare(q2.date||"9999"));
+  }else if(sortKey==="added"){
+    x.sort((p,q2)=>(q2.added_at||"").localeCompare(p.added_at||""));
   }else{
     const key=sortKey==="dist_yokohama"?"dist_km_from_yokohama":"dist_km_from_tokyo";
     x.sort((p,q2)=>{
