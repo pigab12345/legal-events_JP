@@ -83,5 +83,75 @@
     "note": "判例研究会告知として有力とされたが、優先度の高い8件からは除外された参考サイト。",
     "auto_discovered": true,
     "discovered_at": "2026-08-09T05:32:43.757301+00:00"
+  },
+  {
+    "name": "慶應義塾大学法学部（お知らせ・イベント）",
+    "url": "https://www.keio.ac.jp/ja/law/",
+    "note": "ドイツ・ザールラント大学との学術交流シンポジウムや、知的財産法講演会「AI学習と著作権問題」などのイベント告知が時系列で一覧掲載されていることから、大学法学部の講演会・シンポジウム一覧ページと判断。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015145+00:00"
+  },
+  {
+    "name": "日本大学法学部 研究会開催情報",
+    "url": "https://www.law.nihon-u.ac.jp/institute/info/",
+    "note": "日本大学法学部附属研究所が主催する学内外向け研究会の開催情報を集約した専用一覧ページであり、判例研究会・法学系研究会の告知に該当。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015163+00:00"
+  },
+  {
+    "name": "日本公法学会 総会案内",
+    "url": "https://www.asas.or.jp/publiclaw/meeting.html",
+    "note": "次回総会の開催日・会場情報が掲載され、総会特設ホームページへのアクセス方法等も案内されるなど、学会大会案内ページとして機能。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015170+00:00"
+  },
+  {
+    "name": "東京弁護士会 シンポジウム・講演会一覧",
+    "url": "https://www.toben.or.jp/know/iinkai/seibyoudou/symposium/",
+    "note": "「性の平等に関する委員会」主催の公開学習会・シンポジウムが多数、開催年月日とともに一覧化されている、既知の「news/event」ページとは別セクションの委員会別イベントアーカイブ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015176+00:00"
+  },
+  {
+    "name": "東京弁護士会 地方自治判例研究会メモ一覧",
+    "url": "https://www.toben.or.jp/know/houritsukenkyuubu/jititaitouhoumu/post_44.html",
+    "note": "第184回、第183回など回次ごとの地方自治判例研究会の開催日時とメモPDFが一覧掲載されている、判例研究会告知ページの典型例。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015182+00:00"
+  },
+  {
+    "name": "愛知学院大学社会連携センター（法務支援）市民向け法律公開講座",
+    "url": "http://legal-supports.agu.ac.jp/citizen/index.html",
+    "note": "実務家教員（弁護士）と研究者教員が市民向けに法律問題や基本的な法知識を解説する市民公開講座の案内ページで、一般向け法律講座一覧に該当。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015188+00:00"
+  },
+  {
+    "name": "神奈川県弁護士会 市民法律講座",
+    "url": "https://www.kanaben.or.jp/profile/gaiyou/torikumi/shimin/index.html",
+    "note": "県内6ケ所（横浜市、川崎市、横須賀市、小田原市、厚木市、相模原市）で開催される市民法律講座の日程・開催地一覧が掲載されている、弁護士会主催の市民向け講座一覧。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015194+00:00"
+  },
+  {
+    "name": "国際法学会 アウトリーチ・市民講座",
+    "url": "https://jsil.jp/outreach-lecture",
+    "note": "一般の方々に国際法への関心を深めてもらうための「市民講座」の告知や、日弁連主催「国際分野で活躍するための法律家キャリアセミナー」の案内が掲載されている、学会主催の一般・学生向けイベント一覧。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015202+00:00"
+  },
+  {
+    "name": "裁判所 説明会・ワークショップ・インターンシップ情報",
+    "url": "https://www.courts.go.jp/saiyo/setumeikai/index.html",
+    "note": "各地の裁判所で開催される採用試験説明会やワークショップ、業務体験セミナーの日程が地域別に多数一覧掲載されている、裁判所の学生向け業務説明会・インターンシップ情報の集約ページ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015209+00:00"
+  },
+  {
+    "name": "検察庁 検事採用情報サイト イベント情報",
+    "url": "https://www.kensatsu.go.jp/saiyou/kenji/kenji/event.html",
+    "note": "大学生向け業務説明会や検察庁説明会（東京・大阪）などのイベントが開催日・場所とともに一覧掲載されている、検察官志望の学生向け業務説明会情報の一覧ページ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:49:57.015214+00:00"
   }
 ]
