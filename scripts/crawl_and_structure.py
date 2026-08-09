@@ -89,24 +89,52 @@ EXTRACTION_PROMPT = """あなたは日本の法学系イベント情報を抽出
 ---
 """
 
-DISCOVERY_SEARCH_PROMPT = """あなたは日本の法学系オンラインイベント情報サイトを探すリサーチャーです。
-ウェブ検索ツールを積極的に使い、最低5回は異なるキーワードで検索してください。
-（例: "大学 法学部 シンポジウム 一覧", "弁護士会 公開講座", "学会 大会案内 法学", "判例研究会 告知",
-  "大学 法学部 公開講義", "市民 法律講座", "司法試験 予備試験 ガイダンス 説明会",
-  "司法修習生 説明会", "法律事務所 就活 説明会 学生", "検察庁 裁判所 業務説明会 学生",
-  "学会 会員限定 大会", "法学部 学内限定 説明会" など）
+DISCOVERY_CATEGORIES = [
+    {
+        "label": "弁護士会",
+        "queries": '"東京弁護士会 講座", "第一東京弁護士会 イベント", "第二東京弁護士会 イベント", '
+                   '"大阪弁護士会 講座 一覧", "愛知県弁護士会 イベント", "福岡県弁護士会 講座", '
+                   '"神奈川県弁護士会 イベント", "弁護士会 一覧 47都道府県", "弁護士会 会員研修 案内"',
+        "targets": "全国の弁護士会（東京三会・大阪・愛知・福岡・神奈川など各都道府県弁護士会）が"
+                   "開催する講座・シンポジウム・研修・市民講座の一覧・お知らせページ。"
+                   "日本弁護士連合会（日弁連）だけでなく、各地域の単位弁護士会を個別に探してください。",
+    },
+    {
+        "label": "法律事務所",
+        "queries": '"法律事務所 セミナー 一覧", "法律事務所 主催 無料セミナー", '
+                   '"大手法律事務所 セミナー 企業法務", "法律事務所 新卒 説明会", '
+                   '"法律事務所 ウェビナー 法律相談", "法律事務所 公開講座"',
+        "targets": "個々の法律事務所（大手渉外事務所から中小事務所まで）が自ら主催する"
+                   "セミナー・ウェビナー・説明会・法律相談会の告知ページ。特定の1〜2事務所に偏らず、"
+                   "できるだけ多様な事務所を探してください。",
+    },
+    {
+        "label": "学会・研究会",
+        "queries": '"学会 大会案内 法学", "判例研究会 告知", "法学部 学内限定 説明会", "学会 会員限定 大会"',
+        "targets": "私法学会・公法学会など学会の大会案内、判例研究会・法学系研究会の告知ページ",
+    },
+    {
+        "label": "公開講義・市民講座",
+        "queries": '"大学 法学部 公開講義", "市民 法律講座", "消費者被害 講座 無料"',
+        "targets": "大学等が開く一般向け公開講義・公開講座、市民向け法律講座・法教育イベントの一覧ページ",
+    },
+    {
+        "label": "受験生・修習生・就活",
+        "queries": '"司法試験 予備試験 ガイダンス 説明会", "司法修習生 説明会", '
+                   '"法律事務所 就活 説明会 学生", "検察庁 裁判所 業務説明会 学生"',
+        "targets": "司法試験・予備試験受験生向けガイダンス、司法修習生向け説明会、"
+                   "法曹志望学生向けの就活・進路説明会・業務説明会・インターンシップ情報サイト",
+    },
+]
 
-探す対象（専門家向け・学生向け・一般向けを問わず幅広く含めてください。
+DISCOVERY_SEARCH_PROMPT = """あなたは日本の法学系オンラインイベント情報サイトを探すリサーチャーです。
+今回は「{label}」というカテゴリに絞って探索してください。
+ウェブ検索ツールを積極的に使い、最低4回は異なるキーワードで検索してください
+（例: {queries} などのバリエーション。同じ組織名だけに偏らず、複数の異なる組織・地域を探してください）。
+
+探す対象: {targets}
 会員限定・学内限定・招待制など「一般の人は参加できない」サイトも積極的に対象にしてください。
-そのサイトが一般公開イベントを扱っているかどうかは、探索の可否とは無関係です）:
-- 大学法学部・法科大学院のシンポジウム/講演会一覧ページ（学内限定含む）
-- 弁護士会・司法書士会・税理士会等の講座一覧ページ（会員限定含む）
-- 私法学会・公法学会など学会の大会案内ページ（会員限定含む）
-- 判例研究会・法学系研究会の告知ページ
-- 大学等が開く一般向け公開講義・市民向け法律講座の一覧ページ
-- 司法試験・予備試験受験生向けガイダンスサイト（予備校・大学法科大学院の説明会情報含む）
-- 司法修習生向け説明会・研修情報サイト（修習生限定含む）
-- 法律事務所・検察庁・裁判所・企業法務部等の就活・進路説明会、業務説明会、インターンシップ情報サイト（特定大学の学生限定含む）
+そのサイトが一般公開イベントを扱っているかどうかは、探索の可否とは無関係です。
 
 以下は既に把握済みのサイトです。これらと同一・実質的に重複するものは除外してください:
 {existing_urls}
@@ -115,8 +143,8 @@ DISCOVERY_SEARCH_PROMPT = """あなたは日本の法学系オンラインイベ
 {rejected_urls}
 
 検索結果から、個別イベントページではなく「一覧・お知らせページ」を優先して、
-見つかったサイトを最大10件、サイト名・URL・法学イベント一覧ページだと判断した根拠とともに
-箇条書きでリストアップしてください（説明や検索過程の記述があっても構いません）。
+見つかったサイトを最大6件、サイト名・URL・判断根拠とともに箇条書きでリストアップしてください
+（説明や検索過程の記述があっても構いません）。
 """
 
 DISCOVERY_FORMAT_PROMPT = """以下はリサーチャーが調査した「法学系イベント一覧ページ」の候補メモです。
@@ -183,59 +211,66 @@ def call_claude(prompt: str, tools=None, max_tokens=2000) -> str:
     return "".join(b.get("text", "") for b in blocks if b.get("type") == "text").strip()
 
 
-def discover_new_sources(existing_sources: list, rejected: list) -> list:
-    """既存sources.jsonと重複しない新規サイトをweb検索で発見する（検索→整形の2段階）"""
-    existing_urls = "\n".join(f"- {s['url']}" for s in existing_sources) or "(なし)"
-    rejected_urls = "\n".join(f"- {u}" for u in rejected) or "(なし)"
-
-    # --- 1段階目: 検索そのものはツールに自由にやらせる（JSON強制はしない） ---
-    search_prompt = DISCOVERY_SEARCH_PROMPT.format(existing_urls=existing_urls, rejected_urls=rejected_urls)
-    try:
-        notes = call_claude(
-            search_prompt,
-            tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 8}],
-            max_tokens=4000,
-        )
-    except Exception as e:
-        print(f"[WARN] サイト探索(検索フェーズ)に失敗しました: {e}", file=sys.stderr)
-        return []
-
-    if not notes:
-        print("[WARN] 検索フェーズの出力が空でした（web検索が組織で無効化されている可能性があります）", file=sys.stderr)
-        return []
-    print(f"[DEBUG] 検索フェーズの出力(先頭400字): {notes[:400]}", file=sys.stderr)
-
-    # --- 2段階目: 得られたメモを厳密なJSONへ整形（検索ツールは使わせない） ---
-    try:
-        raw = call_claude(DISCOVERY_FORMAT_PROMPT.format(notes=notes), max_tokens=2000)
-    except Exception as e:
-        print(f"[WARN] サイト探索(整形フェーズ)に失敗しました: {e}", file=sys.stderr)
-        return []
-
-    found = extract_json_array(raw)
-    if found is None:
-        print(f"[WARN] サイト探索結果のJSON解析に失敗: {raw[:300]}", file=sys.stderr)
-        return []
-    if not isinstance(found, list):
-        return []
-
+def discover_new_sources(existing_sources: list, rejected: list, max_per_run: int = 25) -> list:
+    """既存sources.jsonと重複しない新規サイトをカテゴリ別にweb検索で発見する（検索→整形の2段階×カテゴリ数）"""
     known = {normalize_url(s["url"]) for s in existing_sources}
     known |= {normalize_url(u) for u in rejected}
 
-    new_sources = []
-    for f in found:
-        url = f.get("url", "").strip()
-        if not url or normalize_url(url) in known:
+    all_new_sources = []
+
+    for cat in DISCOVERY_CATEGORIES:
+        if len(all_new_sources) >= max_per_run:
+            break
+
+        existing_urls = "\n".join(f"- {s['url']}" for s in existing_sources) or "(なし)"
+        rejected_urls = "\n".join(f"- {u}" for u in rejected) or "(なし)"
+        search_prompt = DISCOVERY_SEARCH_PROMPT.format(
+            label=cat["label"], queries=cat["queries"], targets=cat["targets"],
+            existing_urls=existing_urls, rejected_urls=rejected_urls,
+        )
+
+        print(f"[INFO] サイト探索カテゴリ: {cat['label']}", file=sys.stderr)
+        try:
+            notes = call_claude(
+                search_prompt,
+                tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 6}],
+                max_tokens=3000,
+            )
+        except Exception as e:
+            print(f"[WARN] サイト探索(検索フェーズ/{cat['label']})に失敗: {e}", file=sys.stderr)
             continue
-        known.add(normalize_url(url))
-        new_sources.append({
-            "name": f.get("name", url),
-            "url": url,
-            "note": f.get("reason", "自動発見"),
-            "auto_discovered": True,
-            "discovered_at": datetime.now(timezone.utc).isoformat(),
-        })
-    return new_sources
+
+        if not notes:
+            print(f"[WARN] 検索フェーズの出力が空でした（{cat['label']}）", file=sys.stderr)
+            continue
+        print(f"[DEBUG] {cat['label']}の検索結果(先頭300字): {notes[:300]}", file=sys.stderr)
+
+        try:
+            raw = call_claude(DISCOVERY_FORMAT_PROMPT.format(notes=notes), max_tokens=1500)
+        except Exception as e:
+            print(f"[WARN] サイト探索(整形フェーズ/{cat['label']})に失敗: {e}", file=sys.stderr)
+            continue
+
+        found = extract_json_array(raw)
+        if not found:
+            continue
+
+        for f in found:
+            url = f.get("url", "").strip()
+            if not url or normalize_url(url) in known:
+                continue
+            known.add(normalize_url(url))
+            all_new_sources.append({
+                "name": f.get("name", url),
+                "url": url,
+                "note": f"[{cat['label']}] " + f.get("reason", "自動発見"),
+                "auto_discovered": True,
+                "discovered_at": datetime.now(timezone.utc).isoformat(),
+            })
+            if len(all_new_sources) >= max_per_run:
+                break
+
+    return all_new_sources
 
 
 def fetch_text(url: str) -> str:
