@@ -42,16 +42,17 @@ jobs:
       - name: 候補PRを作成
         if: steps.diff.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: "🤖 イベント候補を更新"
-          branch: bot/candidates-update
-          title: "🤖 新着イベント候補あり"
-          body-path: run_summary.md
-          add-paths: |
+        with: 
+         token: ${{ secrets.GITHUB_TOKEN }}
+         commit-message: "🤖 イベント候補を更新"
+         branch: bot/candidates-update
+         title: "🤖 新着イベント候補あり"
+         body-path: run_summary.md
+         add-paths: |
             data/candidates.json
             data/geocache.json
             data/sources.json
-
+  
       - name: Discord通知（任意・secrets.DISCORD_WEBHOOK_URL設定時のみ）
         if: steps.diff.outputs.changed == 'true' && env.DISCORD_WEBHOOK_URL != ''
         env:
