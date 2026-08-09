@@ -30,11 +30,13 @@ jobs:
       - name: 変更有無を確認
         id: diff
         run: |
-          if git diff --quiet -- data/candidates.json; then
+          git add -A -- data/candidates.json data/geocache.json data/sources.json data/rejected_sources.json
+          if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+          git reset
 
       - name: 候補PRを作成
         if: steps.diff.outputs.changed == 'true'
