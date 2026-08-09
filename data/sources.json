@@ -13,5 +13,61 @@
     "name": "（例）〇〇弁護士会 公開講座",
     "url": "https://www.example-bengoshikai.or.jp/event/",
     "note": "実際の弁護士会・司法書士会等のイベントページに差し替えてください"
+  },
+  {
+    "name": "東京弁護士会「イベント情報等」一覧ページ",
+    "url": "https://www.toben.or.jp/news/event/",
+    "note": "公開講座「泉佐野市ふるさと納税訴訟と特別地方交付税減額訴訟」など、自治体主催・関弁連主催の講演会やシンポジウムの開催告知が時系列で並ぶ一覧ページであり、既知の「example-bengoshikai」サイトとは別の弁護士会公式サイト。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:05:34.096469+00:00"
+  },
+  {
+    "name": "日本弁護士連合会（日弁連）イベント一覧ページ",
+    "url": "https://www.nichibenren.or.jp/event.html",
+    "note": "公開学習会「非正規地方公務員の処遇改善に向けて」や模擬裁判選手権、夏期消費者セミナーなど多数の公開講座・シンポジウム告知が日付順に掲載されている全国規模の弁護士会公開講座一覧。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:05:34.096489+00:00"
+  },
+  {
+    "name": "日本公法学会「総会案内」ページ",
+    "url": "https://www.asas.or.jp/publiclaw/meeting.html",
+    "note": "次回総会は2026年10月10日（土）、11日（日）に南山大学で開催されることが告知され、総会特設ホームページへの案内方法も記載されている、学会の大会案内ページ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:05:34.096498+00:00"
+  },
+  {
+    "name": "国際私法学会 研究大会案内ページ",
+    "url": "http://www.pilaj.jp/ind03_j.html",
+    "note": "第139回(2026年度)国際私法学会研究大会が2026年6月13日及び14日に開催予定であることを告知する、学会公式の大会案内ページ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:05:34.096504+00:00"
+  },
+  {
+    "name": "東京大学民事法判例研究会・民法懇話会 告知サイト",
+    "url": "https://www.hanmin.j.u-tokyo.ac.jp/",
+    "note": "民法懇話会の開催要領（日時・題目・報告者・場所・ハイブリッド開催方法）が随時更新され告知される、判例研究会・研究会の告知に特化したページ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:05:34.096510+00:00"
+  },
+  {
+    "name": "東京弁護士会「地方自治判例研究会」開催記録一覧ページ",
+    "url": "https://www.toben.or.jp/know/houritsukenkyuubu/jititaitouhoumu/post_44.html",
+    "note": "第184回、第183回、第182回…と地方自治判例研究会の開催日時・研究会メモが回次順に一覧掲載されている判例研究会の告知・記録ページ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:05:34.096516+00:00"
+  },
+  {
+    "name": "東京大学大学院法学政治学研究科・法学部 公式サイト イベント欄",
+    "url": "https://www.j.u-tokyo.ac.jp/",
+    "note": "比較法政シンポジウムや「憲法改正の比較憲法学」シンポジウム、AI法務リーダーシッププログラムなど、複数のイベント告知が新着順に列挙される法学部公式のイベント一覧ページ。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:05:34.096522+00:00"
+  },
+  {
+    "name": "日本大学法学部「研究会開催情報」ページ",
+    "url": "https://www.law.nihon-u.ac.jp/institute/info/",
+    "note": "ページタイトルが「研究会開催情報」であり、法学部附属研究所等が主催する判例研究会・学術研究会の開催情報を継続的に告知する一覧ページとして機能している。",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T05:05:34.096532+00:00"
   }
 ]
