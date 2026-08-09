@@ -153,5 +153,75 @@
     "note": "大学生向け業務説明会や検察庁説明会（東京・大阪）などのイベントが開催日・場所とともに一覧掲載されている、検察官志望の学生向け業務説明会情報の一覧ページ。",
     "auto_discovered": true,
     "discovered_at": "2026-08-09T05:49:57.015214+00:00"
+  },
+  {
+    "name": "東京三弁護士会司法修習予定者等就職合同説明会",
+    "url": "https://www.toben.or.jp/admission/syusyusei/setsumeikai/",
+    "note": "司法修習生および修習予定者対象の就職合同説明会案内ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890357+00:00"
+  },
+  {
+    "name": "東京弁護士会「修習生の方へ」ページ",
+    "url": "https://www.toben.or.jp/admission/syusyusei/",
+    "note": "司法修習生対象の就職・相談会・セミナー等のお知らせ一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890376+00:00"
+  },
+  {
+    "name": "日本弁護士連合会「法律事務所への入所を目指す」ページ",
+    "url": "https://www.nichibenren.or.jp/legal_info/legal_apprentice/employment.html",
+    "note": "各弁護士会等で開催予定の就職説明会日程等を掲載する情報ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890383+00:00"
+  },
+  {
+    "name": "全国就職合同説明会2026（修習生向けページ）",
+    "url": "https://sankai-online.com/syusyusei/",
+    "note": "司法修習予定者限定の就職説明会・相談会等の告知一覧",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890389+00:00"
+  },
+  {
+    "name": "法科大学院協会「ロースクールへ行こう！！」説明会サイト",
+    "url": "https://www.lskyokai.jp/caravan/",
+    "note": "法科大学院協会主催の合同説明会告知ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890395+00:00"
+  },
+  {
+    "name": "千葉大学法科大学院説明会案内ページ",
+    "url": "https://www.lawschool.chiba-u.jp/admission/briefing/index.html",
+    "note": "法科大学院説明会開催の告知ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890400+00:00"
+  },
+  {
+    "name": "慶應義塾大学法務研究科（法科大学院）説明会ニュースページ",
+    "url": "https://www.keio.ac.jp/ja/ls/news/20260530-1/",
+    "note": "法科大学院説明会開催の告知ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890406+00:00"
+  },
+  {
+    "name": "北海道大学法科大学院「説明会情報」ページ",
+    "url": "https://www.juris.hokudai.ac.jp/ls/examinee/entry-2-2/briefing-2.html",
+    "note": "入学希望者向け説明会の開催回一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890415+00:00"
+  },
+  {
+    "name": "大阪公立大学法科大学院説明会ページ",
+    "url": "https://www.omu.ac.jp/lawschool/admissions/seminar/",
+    "note": "法科大学院説明会の複数回開催情報一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890422+00:00"
+  },
+  {
+    "name": "早稲田大学入学センター「大学院説明会・個別相談会」ページ",
+    "url": "https://www.waseda.jp/inst/admission/graduate/visiting/",
+    "note": "法科大学院を含む各研究科の説明会・個別相談会予定一覧ページ",
+    "auto_discovered": true,
+    "discovered_at": "2026-08-09T07:47:38.890428+00:00"
   }
 ]

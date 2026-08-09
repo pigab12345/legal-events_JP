@@ -7,11 +7,13 @@
     "time": "",
     "org": "関西大学法学研究所",
     "area": "東京",
-    "place": "関西大学 東京センター 教室A",
+    "place": "関西大学東京センター 教室A",
     "fee": "",
     "access": "要問合せ",
     "speakers": "",
-    "fields": [],
+    "fields": [
+      "法学"
+    ],
     "confidence": "公式確認済",
     "source": "https://www.kansai-u.ac.jp/ILS/",
     "application_status": "受付中",
@@ -190,5 +192,29 @@
     "lng": 139.152246,
     "dist_km_from_tokyo": 72.4,
     "dist_km_from_yokohama": 48.1
+  },
+  {
+    "id": "192ba53eaa75",
+    "title": "日本公法学会 総会（次回大会）",
+    "category": "学会・専門シンポジウム",
+    "date": "2026-10-10",
+    "time": "",
+    "org": "日本公法学会",
+    "area": "岡山",
+    "place": "岡山大学",
+    "fee": "",
+    "access": "不可",
+    "speakers": "",
+    "fields": [
+      "公法"
+    ],
+    "confidence": "公式確認済",
+    "source": "https://www.asas.or.jp/publiclaw/meeting.html",
+    "application_status": "不明",
+    "cancelled": false,
+    "lat": 34.6889496,
+    "lng": 133.9220359,
+    "dist_km_from_tokyo": 542.4,
+    "dist_km_from_yokohama": 525.8
   }
 ]
